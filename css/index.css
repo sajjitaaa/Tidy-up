@@ -82,15 +82,15 @@ width: 23vw !important;
 }
 
 
- .card{
-   border-radius: 0%;
+ .cards{
+  border-radius: 0%;
   padding: 2%;
   justify-content: space-evenly;
   overflow: hidden;
   background-color: rgba(1, 6, 32, 0.8) !important;
   color: #b3def1;
 }
-/* Cards css */
+/* cardss css */
 .wrapper {
   width: 100%;
   margin: 5% auto;
