@@ -21,6 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from carts import views as cartviews
 from orders import views as orderviews
+from accounts import views as accountviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,7 +34,8 @@ urlpatterns = [
     url(r'^cart/(?P<id>\d+)/$', cartviews.remove_from_cart, name='remove_from_cart'),
     url(r'^checkout/$', orderviews.checkout, name='checkout',),
     url(r'^orders/$', orderviews.orders, name='user_orders',),
-
+    url(r'^accounts/logout/$', accountviews.logout_view, name='auth_logout'),
+    url(r'^accounts/login/$', accountviews.login_view, name='auth_login'),
 ]
 
 if settings.DEBUG:

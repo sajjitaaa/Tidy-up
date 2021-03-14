@@ -1,109 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tidy Up</title>
-    <link rel="stylesheet" href="css/index.css" />
-    <!-- css style sheet -->
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tidy Up</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <!-- css style sheet -->
 
-    <!-- font awesome link -->
-    <script
-      src="https://kit.fontawesome.com/e58d4fb0ce.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
-      rel="stylesheet"
-    />
-    <!-- various links for bootstrap -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 
-    <!-- google fonts link -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <!-- font awesome link -->
+  <script src="https://kit.fontawesome.com/e58d4fb0ce.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+  <!-- various links for bootstrap -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <body>
-    <section class="title-navbar">
-      <!-- navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Tidy Up</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
+  <!-- google fonts link -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap"
+    rel="stylesheet" />
+</head>
 
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Categories
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Girls Summer</a></li>
-                  <li><a class="dropdown-item" href="#">Girls Winter</a></li>
-                  <li><a class="dropdown-item" href="#">Boys Summer</a></li>
-                  <li><a class="dropdown-item" href="#">Boys Winter</a></li>
-                  <li><a class="dropdown-item" href="#">Kids</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="nav-search d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search by School"
-                aria-label="Search"
-              />
-              <button class="btn btn-search btn-outline-light" type="submit">
-                Search
-              </button>
-            </form>
-            <div class="btn-accounts">
-              <a class="btn btn-nav btn-info" href="#">Login</a>
-              <!-- <a class="btn btn-nav btn-info" href="#">Logout</a> -->
+<body>
+  <section class="title-navbar">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">Tidy Up</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>
 
-              <a class="btn btn-nav btn-outline-info" href="#">Sign up</a>
-              <a class="btn btn-nav btn-outline-light" href="#">
-                <i class="fas fa-shopping-cart"></i>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown" aria-expanded="false">
+                Categories
               </a>
-            </div>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Girls Summer</a></li>
+                <li><a class="dropdown-item" href="#">Girls Winter</a></li>
+                <li><a class="dropdown-item" href="#">Boys Summer</a></li>
+                <li><a class="dropdown-item" href="#">Boys Winter</a></li>
+                <li><a class="dropdown-item" href="#">Kids</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="nav-search d-flex" role='search' action='/s/'>
+            <input class="form-control me-2" type="search" placeholder="Search by School" aria-label="Search" />
+            <button class="btn btn-search btn-outline-light" type="submit">
+              Search
+            </button>
+          </form>
+          <div class="btn-accounts">
+            <a class="btn btn-nav btn-info" href="#">Login</a>
+            <a class="btn btn-nav btn-outline-info" href="#">Sign up</a>
+            <a class="btn btn-nav btn-outline-light" href="#">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
           </div>
         </div>
       </nav>
