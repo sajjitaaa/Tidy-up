@@ -1,0 +1,11 @@
+/* product display and sidebar */
+.main-content{
+    margin: 2%;
+}
+.main-content .card {
+    padding: 2% !important;
+    background-color: rgb(212, 226, 250) !important;
+}
+.card-sidebar{
+    margin: 0% 4% 5% 1%;
+}
