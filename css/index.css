@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-image: url('../images/new-bg-new.jpg');
+  background-image: url("../images/new-bg-new.jpg");
   background-color: #cccccc;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -21,16 +21,15 @@ body {
   color: #b3def1;
 }
 /* navbar */
-.navbar{
+.navbar {
   justify-content: flex-end;
 }
 .navbar.bg-light {
-   background-color: rgba(1, 5, 27, 0.9) !important;
-
+  background-color: rgba(1, 5, 27, 0.9) !important;
 }
 .navbar-brand {
   font-family: "Ubuntu", sans-serif;
-  color: #b3def1 !important;
+  color: rgb(179, 222, 241) !important;
   font-weight: 900;
   font-size: 1.5rem !important;
 }
@@ -40,36 +39,37 @@ body {
   font-weight: 500 !important;
   margin: 0 10px !important;
 }
-.nav-link:hover{
+.nav-link:hover {
   color: #3c6f85 !important;
   font-size: 1.21rem !important;
 }
 .navbar-nav {
   margin-left: 3vw !important;
   display: flexbox;
-  justify-content:space-evenly !important;
+  justify-content: space-evenly !important;
 }
-.nav-search{
-margin-left: 5vw !important;
-width: 35vw !important;
+.nav-search {
+  margin-left: 5vw !important;
+  width: 35vw !important;
 }
-.btn-search{
+.btn-search {
   margin-left: 0.85vw !important;
 }
-.btn-accounts{
-margin-left: 13vw !important;
-width: 23vw !important;
+.btn-accounts {
+  margin-left: 13vw !important;
+  /* width: 16vw !important; */
 }
-.btn-nav{
+.btn-nav {
   margin-left: 0.5vw !important;
 }
 
 /* carousel */
-.carousel .block-area{
-  margin: 0.5%;
-  padding: 1%  !important;
+.carousel .block-area {
+  margin: 3% 0%;
+  padding: 1% !important;
   overflow: hidden;
   width: 100% !important;
+  background-color: rgba(31, 75, 94, 0.8) !important;
 }
 .carousel-inner {
   position: relative;
@@ -83,8 +83,7 @@ width: 23vw !important;
   font-weight: 400 !important;
 }
 
-
- .cards{
+.cards {
   border-radius: 0%;
   padding: 2%;
   justify-content: space-evenly;
@@ -265,6 +264,7 @@ width: 23vw !important;
   margin-right: 2vw !important;
   margin-left: 2vw;
   margin-bottom: 4vh !important;
+  background-color: rgba(31, 75, 94, 0.8) !important;
 }
 .icon-footer {
   color: #fff6a9;
