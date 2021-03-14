@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block head_title %}
+Welcome to
+{% endblock %}
+{% block content %}
+
+
+<div class="jumbotron">
+   {% for product in products %}
+   <a href='{% url 'single' product.slug %}'>{{ product.title }}</a>
+   {{ product.price }}
+   {{ product.description }}
+
+   <!-- {{ product.productimage_set.all }} -->
+
+
+   {% for item in product.productimage_set.all %}
+   <img src="{{ MEDIA_URL }}/media/{{ item.image }}" alt="not">
+   {% endfor %}
+   {% endfor %}
+ </div>
+{% endblock %}

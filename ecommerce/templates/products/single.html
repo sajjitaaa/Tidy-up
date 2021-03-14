@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ product.title }}</h1>
+
+{% for img in images %}
+<img src="/media/{{ img.image }}" alt="no image">
+
+{% endfor %}
+
+<form class="form pull-right" action="{% url "add_to_cart" product.slug %}" method="POST">
+  {% csrf_token %}
+  <input type="submit" name="" value="Add to cart">
+  <input type="number" placeholder="1" name="qty" value="1">
+  <!-- <input type="text" name="attr" placeholder="size" value=""> -->
+
+  {% if product.variation_set.all%}
+
+
+  {% if product.variation_set.sizes %}
+  <select name="size" >
+    {% for item in product.variation_set.sizes %}
+    <option value='{{ item.title|lower }}'>{{ item.title|capfirst }}</option>
+    {% endfor %}
+  </select>
+  {% endif %}
+
+
+  <!-- {% if product.variation_set.colors %}
+  <select name="size" >
+    {% for item in product.variation_set.colors %}
+    <option value='{{ item.title|lower }}'>{{ item.title|capfirst }}</option>
+    {% endfor %}
+  </select>
+  {% endif %} -->
+
+
+  {% endif %}
+
+</form>
+{% endblock %}
