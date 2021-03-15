@@ -4,7 +4,7 @@ html {
 body {
   background-image: url("../images/new-bg-new.jpg");
   background-color: #cccccc;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-attachment: fixed;
   font-family: "Montserrat", sans-serif;
   align-items: center;
