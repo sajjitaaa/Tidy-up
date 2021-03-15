@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^orders/$', orderviews.orders, name='user_orders',),
     url(r'^accounts/logout/$', accountviews.logout_view, name='auth_logout'),
     url(r'^accounts/login/$', accountviews.login_view, name='auth_login'),
+    url(r'^accounts/register/$', accountviews.registration_view, name='auth_register'),
 ]
 
 if settings.DEBUG:
