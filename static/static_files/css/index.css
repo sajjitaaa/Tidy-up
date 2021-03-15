@@ -81,8 +81,24 @@ body {
   text-align: justify;
   font-size: 1.3rem;
   font-weight: 400 !important;
+} 
+.carousel-control-prev {
+  height: 10vh;
+  width: 3vw;
+  background: black !important;
+  color: white !important;
 }
 
+.carousel-control-next {
+  /* margin-bottom: 20vh;
+  margin-top: 20vh; */
+  height: 10vh;
+  width: 3vw;
+  /* margin-right: 14vw; */
+  background: black !important;
+  color: white !important;
+}
+/* Cards */
 .cards {
   border-radius: 0%;
   padding: 2%;
