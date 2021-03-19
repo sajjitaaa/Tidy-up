@@ -1,62 +1,132 @@
+
+
 {% extends 'base.html' %}
 
-
-
-
 {% block head_title %}
+
 Products ||
 {% endblock %}
 
+
 {% block content %}
 
-<div class='row'>
+<!-- sidebar and products  -->
+<section class="container-fluid main-content">
+	<div class="row">
+
+{% include 'sidebar.html' %}
+<!-- products -->
+<div class="col-md-8 products">
+	<section>
+		<!-- Grid row -->
+		<div class="row">
 
 {% for product in products %}
-		<div class='col-sm-2'>
+<!-- Grid column -->
+<div class="col-md-4 mb-4">
+	<div class="card">
+		<div class="view zoom overlay z-depth-2 rounded">
 
-
-
-			<div class="thumbnail">
-					{% if product.productimage_set.all %}
-
-							{% for item in product.productimage_set.all %}
-
-							{% if item.featured %}
-							<div style="width:100px;margin:0 auto;">
-
-								<a href='{{ product.get_absolute_url }}'>
-									<div class='background_img_thumb' style="height:100px;background-image: url('{{ MEDIA_URL }}{{ item.image }}');"></div>
-								</a>
-							</div>
-							<!-- <img class='img-responsive' src="{{ MEDIA_URL }}{{ item.image }}" /> -->
-							{% endif %}
-
-
-
-							{% endfor %}
-
-					{% else %}
-					<div style="width:100px;margin:0 auto;">
-
-								<a href='{{ product.get_absolute_url }}'>
-									<div class='background_img_thumb' style="height:100px;"></div>
-								</a>
-							</div>
-					{% endif %}
-
-					<div class="caption">
-					<a href='{{ product.get_absolute_url }}'> <h3>{{ product.title }}</h3></a>
-					<p>{{ product.description|truncatewords:15}}</p>
-					<p><a href="{{ product.get_absolute_url }}" class="btn btn-primary" role="button">View</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-					</div>
-		   	 </div>
-
-
+			<a href="{{ product.get_absolute_url }}">
+				<div class="mask">
+					<img
+						class="img-fluid w-100"
+						src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg"
+					/>
+					<div class="mask rgba-black-slight"></div>
+				</div>
+			</a>
 		</div>
 
-{% cycle "" "" "" "" "" "</div><br/><hr/><div class='row'>" %}
+		<div class="text-center pt-4">
+			<h5>{{ product.title }}</h5>
+			<p class="mb-2 text-muted text-uppercase small">
+				{{ product.description }}
+			</p>
+
+			<hr />
+			<h6 class="mb-3">Rs. {{ product.price }} </h6>
+			<a
+				type="button"
+				class="btn btn-info btn-sm mr-1 mb-2"
+				href="#"
+				><i class="fas fa-shopping-cart pr-2"></i> change
+			</a>
+			<a
+				href="{{ product.get_absolute_url }}"
+				type="button"
+				class="btn btn-outline-dark btn-sm mr-1 mb-2"
+			>
+				<i class="fas fa-info-circle pr-2"></i>Details
+			</a>
+		</div>
+	</div>
+</div>
+
 {% endfor %}
 
 </div>
+</section>
+</div>
+</div>
+</section>
+
+
+<!-- footer -->
+
+<footer class="block-area footer-section container-fluid">
+	<div class="main-content">
+		<div class="left box">
+			<h2>About Us</h2>
+			<div class="content">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+					necessitatibus! Provident, placeat et nesciunt nobis dolorum
+					tempora laudantium repudiandae necessitatibus beatae, suscipit
+					optio doloribus obcaecati doloremque, iure laboriosam amet
+					voluptatibus?
+				</p>
+				<div class="social">
+					<a class="icon-footer" href="#"
+						><span class="fab fa-facebook-f"></span
+					></a>
+					<a class="icon-footer" href="#"
+						><span class="fab fa-twitter"></span
+					 ></a>
+					 <a class="icon-footer" href="#"
+						 ><span class="fab fa-instagram"></span
+					 ></a>
+					 <a class="icon-footer" href="#"
+						 ><span class="fab fa-linkedin"></span
+					 ></a>
+				 </div>
+			 </div>
+		 </div>
+
+		<div class="center box">
+			<h2>Address</h2>
+			<div class="content">
+				<div class="place">
+					<span class="fas fa-map-marker-alt"></span>
+					<span class="text"
+						>9301 Roberts Street Duvernay-Est, QC H7A 2M7</span
+					>
+				</div>
+
+				<div class="phone">
+					<span class="fas fa-phone"></span>
+					<span class="text">425-785-5798</span>
+				</div>
+
+				<div class="email">
+					<span class="fas fa-envelope"></span>
+					<span class="text">XYZABC@email.com</span>
+				</div>
+			</div>
+		 </div>
+	 </div>
+ </footer>
+
+
 
 {% endblock %}

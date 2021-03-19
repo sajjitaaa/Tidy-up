@@ -11,9 +11,15 @@
   <tbody>
     {% for product in products %}
     <tr>
-      <td>Image</td>
       <td>
-        <a href="{{ product.get_absolute_url }}">{{ product }}</a>
+        {% for item in product.productimage_set.all %}
+        <img style="width:10%;" src="/media/{{ item.image }}" />
+        {% endfor %}
+      </td>
+      <td>
+        <h2><a href="{{ product.get_absolute_url }}">{{ product }}</a></h2>
+        <p>{{ product.description }}</p>
+        <h3>{{ product.price }}</h3>
       </td>
     </tr>
     {% endfor %}

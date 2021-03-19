@@ -261,14 +261,14 @@
             <!-- Grid row -->
             <div class="row">
               <!-- Grid column -->
+
+
+
+              
               <div class="col-md-4 mb-4">
                 <div class="card">
                   <div class="view zoom overlay z-depth-2 rounded">
-                    <!-- <img
-                      class="img-fluid w-100"
-                      src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
-                      alt="Sample"
-                    /> -->
+
                     <a href="#!">
                       <div class="mask">
                         <img
@@ -283,19 +283,19 @@
                   <div class="text-center pt-4">
                     <h5>Shirt</h5>
                     <p class="mb-2 text-muted text-uppercase small">
-                      Ryan International School
+                      {{ product.description }}
                     </p>
 
                     <hr />
-                    <h6 class="mb-3">12.99 $</h6>
+                    <h6 class="mb-3">Rs. {{ product.price }} </h6>
                     <a
                       type="button"
                       class="btn btn-info btn-sm mr-1 mb-2"
-                      href=""
+                      href="{% url 'add_to_cart' %}"
                       ><i class="fas fa-shopping-cart pr-2"></i> Add to cart
                     </a>
                     <a
-                      href="product-details.html"
+                      href="{{ product.get_absolute_url }}"
                       type="button"
                       class="btn btn-outline-dark btn-sm mr-1 mb-2"
                     >
@@ -304,159 +304,7 @@
                   </div>
                 </div>
               </div>
-              <!-- Grid column -->
-              <div class="col-md-4 mb-4">
-                <div class="card">
-                  <div class="view zoom overlay z-depth-2 rounded">
-                    <a href="#!">
-                      <div class="mask">
-                        <img
-                          class="img-fluid w-100"
-                          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg"
-                        />
-                        <div class="mask rgba-black-slight"></div>
-                      </div>
-                    </a>
-                  </div>
 
-                  <div class="text-center pt-4">
-                    <h5>Shirt</h5>
-                    <p class="mb-2 text-muted text-uppercase small">
-                      Ryan International School
-                    </p>
-
-                    <hr />
-                    <h6 class="mb-3">12.99 $</h6>
-                    <a
-                      type="button"
-                      class="btn btn-info btn-sm mr-1 mb-2"
-                      href=""
-                      ><i class="fas fa-shopping-cart pr-2"></i> Add to cart
-                    </a>
-                    <a
-                      href="product-details.html"
-                      type="button"
-                      class="btn btn-outline-dark btn-sm mr-1 mb-2"
-                    >
-                      <i class="fas fa-info-circle pr-2"></i>Details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Grid column -->
-              <div class="col-md-4 mb-4">
-                <div class="card">
-                  <div class="view zoom overlay z-depth-2 rounded">
-                    <a href="#!">
-                      <div class="mask">
-                        <img
-                          class="img-fluid w-100"
-                          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg"
-                        />
-                        <div class="mask rgba-black-slight"></div>
-                      </div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-                    <h5>Shirt</h5>
-                    <p class="mb-2 text-muted text-uppercase small">
-                      Ryan International School
-                    </p>
-
-                    <hr />
-                    <h6 class="mb-3">12.99 $</h6>
-                    <a
-                      type="button"
-                      class="btn btn-info btn-sm mr-1 mb-2"
-                      href=""
-                      ><i class="fas fa-shopping-cart pr-2"></i> Add to cart
-                    </a>
-                    <a
-                      type="button"
-                      class="btn btn-outline-dark btn-sm mr-1 mb-2"
-                    >
-                      <i class="fas fa-info-circle pr-2"></i>Details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Grid column -->
-              <div class="col-md-4 mb-4">
-                <div class="card">
-                  <div class="view zoom overlay z-depth-2 rounded">
-                    <a href="#!">
-                      <div class="mask">
-                        <img
-                          class="img-fluid w-100"
-                          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg"
-                        />
-                        <div class="mask rgba-black-slight"></div>
-                      </div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-                    <h5>Shirt</h5>
-                    <p class="mb-2 text-muted text-uppercase small">
-                      Ryan International School
-                    </p>
-
-                    <hr />
-                    <h6 class="mb-3">12.99 $</h6>
-                    <a
-                      type="button"
-                      class="btn btn-info btn-sm mr-1 mb-2"
-                      href=""
-                      ><i class="fas fa-shopping-cart pr-2"></i> Add to cart
-                    </a>
-                    <a
-                      type="button"
-                      class="btn btn-outline-dark btn-sm mr-1 mb-2"
-                    >
-                      <i class="fas fa-info-circle pr-2"></i>Details
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Grid column -->
-              <div class="col-md-4 mb-4">
-                <div class="card">
-                  <div class="view zoom overlay z-depth-2 rounded">
-                    <a href="#!">
-                      <div class="mask">
-                        <img
-                          class="img-fluid w-100"
-                          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg"
-                        />
-                        <div class="mask rgba-black-slight"></div>
-                      </div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-                    <h5>Shirt</h5>
-                    <p class="mb-2 text-muted text-uppercase small">
-                      Ryan International School
-                    </p>
-
-                    <hr />
-                    <h6 class="mb-3">12.99 $</h6>
-                    <a
-                      type="button"
-                      class="btn btn-info btn-sm mr-1 mb-2"
-                      href=""
-                      ><i class="fas fa-shopping-cart pr-2"></i> Add to cart
-                    </a>
-                    <a
-                      type="button"
-                      class="btn btn-outline-dark btn-sm mr-1 mb-2"
-                    >
-                      <i class="fas fa-info-circle pr-2"></i>Details
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
           </section>
         </div>

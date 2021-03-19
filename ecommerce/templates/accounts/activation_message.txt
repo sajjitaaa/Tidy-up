@@ -1,0 +1,10 @@
+Hello {{ user}}
+
+Please Activate your account here :
+
+
+{{ activation_url }}
+
+ThankYou!!
+
+-TidyUp
