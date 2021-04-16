@@ -103,7 +103,21 @@ p {
   width: 100% !important;
   overflow: hidden;
 }
+.carousel-control-prev {
+  margin-top: 20%;
+  height: 10vh;
+  width: 4.5% !important;
+  background: black !important;
+  color: white !important;
+}
 
+.carousel-control-next {
+  margin-top: 20%;
+  height: 10vh;
+  width: 4.5% !important;
+  background: black !important;
+  color: white !important;
+}
 /* features */
 #features {
   position: relative;
@@ -134,7 +148,7 @@ p {
   border-radius: 0%;
   padding: 0%;
   overflow: hidden;
-  color: #cae8d5;
+  color: #427e92;
 }
 .wrapper {
   width: 100%;
@@ -160,6 +174,24 @@ p {
 }
 .card {
   box-shadow: #204051 3px 4px 5px;
+}
+
+.card .btn {
+  margin-bottom: 3%;
+}
+/* Uniforms */
+#uniforms .card {
+  background-color: #b4b3ad !important;
+  color: rgb(48, 47, 47) !important;
+}
+
+#uniforms img {
+  margin-top: 10%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+#uniforms hr {
+  border-top: 1px solid #eee !important;
 }
 
 @media screen and (max-width: 64rem) {
