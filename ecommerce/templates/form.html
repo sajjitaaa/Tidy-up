@@ -3,7 +3,8 @@
 <form method='POST' action=''>
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" class="btn btn-default" name="" value="Login">
+  {% if btn %}{{ btn }}{% else %}Submit{% endif %}
+  <input type="submit" class="btn btn-default" name="" value="{% if btn %}{{btn}}{% else %}Submit{% endif %}">
 </form>
 
 {% endblock %}

@@ -3,7 +3,8 @@
 Welcome to
 {% endblock %}
 {% block content %}
-
+{% include 'carousel.html' %}
+{% include 'cards.html' %}
 
 <div class="jumbotron">
    {% for product in products %}
