@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tidy Up</title>
+    <link rel="stylesheet" href="css/index2.css" />
+
+    <!-- css style sheet -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <!-- font awesome link -->
+    <script
+      src="https://kit.fontawesome.com/e58d4fb0ce.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <!-- various links for bootstrap -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- google fonts link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Title and navbar -->
+    <section class="colored-section" id="title-section">
+      <div class="container-fluid">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="index.html">Tidy Up</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Categories
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="product-by-school.html"
+                      >All products</a
+                    >
+                  </li>
+                  <li><a class="dropdown-item" href="#">Girls Summer</a></li>
+                  <li><a class="dropdown-item" href="#">Girls Winter</a></li>
+                  <li><a class="dropdown-item" href="#">Boys Summer</a></li>
+                  <li><a class="dropdown-item" href="#">Boys Winter</a></li>
+                  <li><a class="dropdown-item" href="#">Kids</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="nav-search d-flex" role="search" action="/s/">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search by School"
+                aria-label="Search"
+              />
+              <button class="btn btn-search btn-outline-light" type="submit">
+                Search
+              </button>
+            </form>
+            <div class="btn-accounts">
+              <a class="btn btn-nav btn-info" href="#">Login</a>
+              <a class="btn btn-nav btn-outline-info" href="#">Sign up</a>
+              <a class="btn btn-nav btn-outline-light" href="{% url 'cart' %}">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+            </div>
+            <!-- <ul class="nav navbar-nav navbar-right">
+              <li><a href="{% url 'allproducts' %}">Products</a></li>
+
+              <li>
+                <a href="{% url 'cart' %}"
+                  >Cart({{ request.session.items_total }})</a
+                >
+              </li>
+              {% if user.is_authenticated %}
+              <li>
+                <a class="btn btn-nav btn-outline-info" href="#">Account</a>
+              </li>
+              <li>
+                <a class="btn btn-nav btn-info" href="{% url 'auth_logout' %}"
+                  >Logout</a
+                >
+              </li>
+              {% else %}
+              <li>
+                <a class="btn btn-nav btn-info" href="{% url 'auth_login' %}"
+                  >Login</a
+                >
+              </li>
+              {% endif %}
+            </ul> -->
+          </div>
+        </nav>
+
+        <!-- carousel -->
+        <div id="carousel-title" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="images/children img2.jpg"
+                class="d-block w-100"
+                data-bs-interval=""
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/children img1.jpg"
+                data-bs-interval=""
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://miro.medium.com/max/2800/1*ftYXPbT-i19JxoUToHrUoQ.png"
+                class="d-block w-100"
+                data-bs-interval=""
+                alt="..."
+              />
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carousel-title"
+            role="button"
+            data-bs-target="#carousel-title"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carousel-title"
+            role="button"
+            data-bs-target="#carousel-title"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="white-section" id="features">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="feature-box col-lg-4">
+            <i class="icon fas fa-check-circle fa-4x"></i>
+            <h3 class="features-title">Easy to use.</h3>
+            <p class="feature-text">
+              So easy to use, even your child could use it.
+            </p>
+          </div>
+
+          <div class="feature-box col-lg-4">
+            <i class="icon fas fa-bullseye fa-4x"></i>
+            <h3 class="features-title">Elite Clientele</h3>
+            <p class="feature-text">
+              We have all the uniforms, from the top schools of India.
+            </p>
+          </div>
+
+          <div class="feature-box col-lg-4">
+            <i class="icon fas fa-heart fa-4x"></i>
+            <h3 class="features-title">Guaranteed to work.</h3>
+            <p class="feature-text">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni,
+              iste?
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
