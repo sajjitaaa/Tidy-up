@@ -79,6 +79,9 @@ p {
 .card-sidebar {
   margin: 0% 4% 5% 1%;
 }
+.product-img-grid {
+  height: 18vw !important;
+}
 /* product-details page */
 .product-img,
 .product-details {
