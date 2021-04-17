@@ -158,7 +158,8 @@ p {
   font-size: 16.5px;
 }
 
-.btn-form {
+
+.loginbox input[type="submit"] {
   text-align: center;
   width: 15vw;
   margin: 10%;
@@ -179,7 +180,7 @@ p {
   position: relative;
 }
 
-.btn-form:hover {
+.loginbox input[type="submit"]:hover {
   transform: scale(1.05);
   text-align: center;
   cursor: pointer;

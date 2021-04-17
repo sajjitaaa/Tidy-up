@@ -150,7 +150,7 @@ input[type="password"]:hover {
   color: #eee;
 }
 
-.btn-form {
+.loginbox input[type="submit"] {
   text-align: center;
   width: 15vw;
   margin: 10%;
@@ -171,7 +171,7 @@ input[type="password"]:hover {
   position: relative;
 }
 
-.btn-form:hover {
+.loginbox input[type="submit"]:hover {
   transform: scale(1.05);
   text-align: center;
   cursor: pointer;
