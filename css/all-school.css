@@ -55,11 +55,12 @@
   text-align: center;
 }
 .row {
-  margin-top: 2%;
+  /* margin-top: 2; */
   display: flexbox;
   justify-content: space-evenly;
 }
 .cols {
+  margin-top: 3%;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -87,7 +88,7 @@
   line-height: 60px;
   font-size: 1.7rem;
   position: relative;
-  left: 5vw;
+  left: 3vw;
   right: 0;
   top: 3vh;
   margin-top: 1vh;
