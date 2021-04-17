@@ -7,7 +7,7 @@
     <title>Tidy Up</title>
     <link rel="stylesheet" href="css/index.css" />
 
-     <!-- css style sheet -->
+    <!-- css style sheet -->
 
     <link
       rel="stylesheet"
@@ -40,9 +40,14 @@
   </head>
 
   <body>
-    <section class="title-navbar">
-      <!-- navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Title and navbar -->
+    <section class="colored-section" id="title-section">
+      <div class="container-fluid">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <!-- <a class="navbar-brand" href="index.html"
+            ><img class="navbar-logo" src="images/Tu-logo.png" alt="Tidy-Up"
+          /></a> -->
           <a class="navbar-brand" href="index.html">Tidy Up</a>
           <button
             class="navbar-toggler"
@@ -111,107 +116,83 @@
                 <i class="fas fa-shopping-cart"></i>
               </a>
             </div>
-            <!-- <ul class="nav navbar-nav navbar-right">
-              <li><a href="{% url 'allproducts' %}">Products</a></li>
+          </div>
+        </nav>
 
-              <li>
-                <a href="{% url 'cart' %}"
-                  >Cart({{ request.session.items_total }})</a
-                >
-              </li>
-              {% if user.is_authenticated %}
-              <li>
-                <a class="btn btn-nav btn-outline-info" href="#">Account</a>
-              </li>
-              <li>
-                <a class="btn btn-nav btn-info" href="{% url 'auth_logout' %}"
-                  >Logout</a
-                >
-              </li>
-              {% else %}
-              <li>
-                <a class="btn btn-nav btn-info" href="{% url 'auth_login' %}"
-                  >Login</a
-                >
-              </li>
-              {% endif %}
-            </ul> -->
+        <!-- carousel -->
+        <div id="carousel-title" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="images/children img2.jpg"
+                class="d-block w-100"
+                data-bs-interval=""
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="images/children img1.jpg"
+                data-bs-interval=""
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://miro.medium.com/max/2800/1*ftYXPbT-i19JxoUToHrUoQ.png"
+                class="d-block w-100"
+                data-bs-interval=""
+                alt="..."
+              />
+            </div>
           </div>
-        
-      </nav>
-      </div>
-    </section>
-    <!-- carousel -->
-    <section class="carousel-section">
-      <div id="carousel-title" class="carousel slide" data-ride="carousel">
-        <div class="block-area container-fluid carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="https://miro.medium.com/max/2800/1*ftYXPbT-i19JxoUToHrUoQ.png"
-              class="d-block w-100"
-              data-bs-interval=""
-              alt="..."
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://miro.medium.com/max/2800/1*ftYXPbT-i19JxoUToHrUoQ.png"
-              data-bs-interval=""
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://miro.medium.com/max/2800/1*ftYXPbT-i19JxoUToHrUoQ.png"
-              class="d-block w-100"
-              data-bs-interval=""
-              alt="..."
-            />
-          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carousel-title"
+            role="button"
+            data-bs-target="#carousel-title"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carousel-title"
+            role="button"
+            data-bs-target="#carousel-title"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </a>
         </div>
-        <a
-          class="carousel-control-prev"
-          href="#carousel-title"
-          role="button"
-          data-bs-target="#carousel-title"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#carousel-title"
-          role="button"
-          data-bs-target="#carousel-title"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
       </div>
     </section>
 
     <!-- Features -->
-
     <section class="white-section" id="features">
       <div class="container-fluid">
         <div class="row">
           <div class="feature-box col-lg-4">
             <i class="icon fas fa-check-circle fa-4x"></i>
             <h3 class="features-title">Easy to use.</h3>
-            <p>So easy to use, even your child could use it.</p>
+            <p class="feature-text">
+              So easy to use, even your child could use it.
+            </p>
           </div>
 
           <div class="feature-box col-lg-4">
             <i class="icon fas fa-bullseye fa-4x"></i>
             <h3 class="features-title">Elite Clientele</h3>
-            <p>We have all the uniforms, from the top schools of India.</p>
+            <p class="feature-text">
+              We have all the uniforms, from the top schools of India.
+            </p>
           </div>
 
           <div class="feature-box col-lg-4">
             <i class="icon fas fa-heart fa-4x"></i>
             <h3 class="features-title">Guaranteed to work.</h3>
-            <p>
+            <p class="feature-text">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni,
               iste?
             </p>
@@ -221,131 +202,235 @@
     </section>
 
     <!-- Schools section -->
-    <section class="school-display-section container-fluid">
-      <div class="cards cards-outer wrapper" id="school-section">
-        <h3>Schools</h3>
-        <div class="row">
-          <div
-            class="cols col-sm-3"
-            ontouchstart="this.classList.toggle('hover');"
-          >
-            <div class="card text-dark mb-3" style="width: 18rem">
-              <img src="" class="car-img-top" alt="..." />
-              <div style="text-align: left" class="card-body">
-                <h5 class="card-title">Ryan International School</h5>
-
-                <a href="product-by-school.html" class="btn btn-primary"
-                  >Show uniforms</a
-                >
+    <section class="school-display-section colored-section-2" id="schools">
+      <div class="container-fluid">
+        <div class="cards cards-outer wrapper" id="school-section">
+          <div class="loading">
+            <span>Schools</span>
+          </div>
+          <!-- <h3 class="loading">Schools</h3> -->
+          <div class="row">
+            <div
+              class="cols col-sm-3"
+              ontouchstart="this.classList.toggle('hover');"
+            >
+              <div class="card text-dark mb-3" style="width: 18rem">
+                <img
+                  src="images/school-img.jpg"
+                  class="car-img-top"
+                  alt="..."
+                />
+                <div style="text-align: left" class="card-body">
+                  <h5 class="card-title">Ryan International School</h5>
+                  <hr />
+                  <a href="product-by-school.html" class="btn btn-primary"
+                    >Show uniforms</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="cols col-sm-3"
+              ontouchstart="this.classList.toggle('hover');"
+            >
+              <div class="card text-dark mb-3" style="width: 18rem">
+                <img
+                  src="images/school-img.jpg"
+                  class="car-img-top"
+                  alt="..."
+                />
+                <div style="text-align: left" class="card-body">
+                  <h5 class="card-title">Delhi Public School</h5>
+                  <hr />
+                  <a href="product-by-school.html" class="btn btn-primary"
+                    >Show uniforms</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="cols col-sm-3"
+              ontouchstart="this.classList.toggle('hover');"
+            >
+              <div class="card text-dark mb-3" style="width: 18rem">
+                <img
+                  src="images/school-img.jpg"
+                  class="car-img-top"
+                  alt="..."
+                />
+                <div style="text-align: left" class="card-body">
+                  <h5 class="card-title">Amity International School</h5>
+                  <hr />
+                  <a href="product-by-school.html" class="btn btn-primary"
+                    >Show uniforms</a
+                  >
+                </div>
               </div>
             </div>
           </div>
-          <div
-            class="cols col-sm-3"
-            ontouchstart="this.classList.toggle('hover');"
-          >
-            <div class="card text-dark mb-3" style="width: 18rem">
-              <img src="" class="car-img-top" alt="..." />
-              <div style="text-align: left" class="card-body">
-                <h5 class="card-title">Delhi Public School</h5>
-
-                <a href="product-by-school.html" class="btn btn-primary"
-                  >Show uniforms</a
-                >
-              </div>
-            </div>
+          <div class="all-school-btn">
+            <a
+              type="button"
+              href="#"
+              class="btn btn-dark btn-next btn-all-schools round"
+              >All Schools &raquo;
+            </a>
           </div>
-          <div
-            class="cols col-sm-3"
-            ontouchstart="this.classList.toggle('hover');"
-          >
-            <div class="card text-dark mb-3" style="width: 18rem">
-              <img src="" class="car-img-top" alt="..." />
-              <div style="text-align: left" class="card-body">
-                <h5 class="card-title">Amity International School</h5>
-
-                <a href="product-by-school.html" class="btn btn-primary"
-                  >Show uniforms</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="all-school-btn">
-          <a href="#" class="btn-next btn-all-schools round"
-            >All Schools &raquo;
-          </a>
         </div>
       </div>
     </section>
+
     <!-- Uniforms section -->
-    <section class="uniform-display-section container-fluid">
-      <div class="cards cards-outer wrapper" id="school-section">
-        <h3>Uniforms</h3>
-        <div class="row">
-          <div
-            class="cols col-sm-3"
-            ontouchstart="this.classList.toggle('hover');"
-          >
-            <div class="card text-dark mb-3" style="width: 18rem">
-              <img
-                src="https://5.imimg.com/data5/NN/RH/MY-3624146/school-uniform-shirts-500x500.jpg"
-                class="car-img-top"
-                alt="..."
-              />
-              <div style="text-align: left" class="card-body">
-                <h5 class="card-title">Shirt</h5>
-
-                <a href="product-by-school.html" class="btn btn-primary"
-                  >View all</a
-                >
+    <section class="uniform-display-section white-section" id="uniforms">
+      <div class="container-fluid">
+        <div class="cards cards-outer wrapper" id="uniform-section">
+          <h3>Uniforms</h3>
+          <div class="row">
+            <div
+              class="cols col-sm-3"
+              ontouchstart="this.classList.toggle('hover');"
+            >
+              <div class="card text-dark mb-3" style="width: 18rem">
+                <img
+                  src="https://5.imimg.com/data5/NN/RH/MY-3624146/school-uniform-shirts-500x500.jpg"
+                  class="car-img-top"
+                  alt="..."
+                />
+                <div style="text-align: left" class="card-body">
+                  <h5 class="card-title">Shirts</h5>
+                  <hr />
+                  <a href="product-by-school.html" class="btn btn-primary"
+                    >View all</a
+                  >
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            class="cols col-sm-3"
-            ontouchstart="this.classList.toggle('hover');"
-          >
-            <div class="card text-dark mb-3" style="width: 18rem">
-              <img
-                src="https://4.imimg.com/data4/JE/UJ/MY-28406737/school-pant-500x500.jpg"
-                class="car-img-top"
-                alt="..."
-              />
-              <div style="text-align: left" class="card-body">
-                <h5 class="card-title">Trousers</h5>
-
-                <a href="product-by-school.html" class="btn btn-primary"
-                  >View all</a
-                >
+            <div
+              class="cols col-sm-3"
+              ontouchstart="this.classList.toggle('hover');"
+            >
+              <div class="card text-dark mb-3" style="width: 18rem">
+                <img
+                  src="https://4.imimg.com/data4/JE/UJ/MY-28406737/school-pant-500x500.jpg"
+                  class="car-img-top"
+                  alt="..."
+                />
+                <div style="text-align: left" class="card-body">
+                  <h5 class="card-title">Trousers</h5>
+                  <hr />
+                  <a href="product-by-school.html" class="btn btn-primary"
+                    >View all</a
+                  >
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            class="cols col-sm-3"
-            ontouchstart="this.classList.toggle('hover');"
-          >
-            <div class="card text-dark mb-3" style="width: 18rem">
-              <img
-                src="https://5.imimg.com/data5/SELLER/Default/2020/11/DX/IW/GP/24704767/uc-gss-008-girl-school-skirt-500x500.jpg"
-                class="car-img-top"
-                alt="..."
-              />
-              <div style="text-align: left" class="card-body">
-                <h5 class="card-title">Skirt</h5>
-
-                <a href="product-by-school.html" class="btn btn-primary"
-                  >View all</a
-                >
+            <div
+              class="cols col-sm-3"
+              ontouchstart="this.classList.toggle('hover');"
+            >
+              <div class="card text-dark mb-3" style="width: 18rem">
+                <img
+                  src="https://5.imimg.com/data5/SELLER/Default/2020/11/DX/IW/GP/24704767/uc-gss-008-girl-school-skirt-500x500.jpg"
+                  class="car-img-top"
+                  alt="..."
+                />
+                <div style="text-align: left" class="card-body">
+                  <h5 class="card-title">Skirts</h5>
+                  <hr />
+                  <a href="product-by-school.html" class="btn btn-primary"
+                    >View all</a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Reviews -->
+    <section class="colored-section" id="reviews">
+      <div class="container-fluid">
+        <div class="loading">
+          <span>Reviews</span>
+        </div>
+        <div
+          id="carousel-Testimonials"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h2 class="testimonial-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                ipsa, dolor tenetur dolores dolore rerum nostrum possimus quasi
+                asperiores inventore!
+              </h2>
+              <img
+                class="testimonial-img"
+                src="images/women-profile.png"
+                alt="dog-profile"
+              />
+              <em>user1, Gurgaon</em>
+            </div>
+
+            <div class="carousel-item c">
+              <h2 class="testimonial-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+                nobis rem accusantium. Voluptates, officiis soluta.
+              </h2>
+              <img
+                class="testimonial-img"
+                src="images/man-profile.png"
+                alt="lady-profile"
+              />
+              <em>user2, Noida</em>
+            </div>
+
+            <div class="carousel-item">
+              <h2 class="testimonial-text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Explicabo distinctio eligendi, illo perferendis maxime
+                voluptatem aspernatur!
+              </h2>
+              <img
+                class="testimonial-img"
+                src="images/women-profile.png"
+                alt="dog-profile"
+              />
+              <em>user3, Delhi</em>
+            </div>
+
+            <a
+              class="carousel-control-prev"
+              href="#carousel-Testimonials"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carousel-Testimonials"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- footer -->
 
-    <footer class="block-area footer-section container-fluid">
+    <footer class="white-section footer-section container-fluid">
       <div class="main-content">
         <div class="left box">
           <h2>About Us</h2>
@@ -392,6 +477,11 @@
             <div class="email">
               <span class="fas fa-envelope"></span>
               <span class="text">XYZABC@email.com</span>
+            </div>
+
+            <div class="copyright-text">
+              <!-- <span class="fas fa-phone"></span> -->
+              <span class="text">© Copyright 2021 Tidy Up</span>
             </div>
           </div>
         </div>
