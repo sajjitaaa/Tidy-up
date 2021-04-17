@@ -1,0 +1,187 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #cccccc;
+  font-family: "Montserrat", sans-serif;
+  align-items: center;
+}
+h1,
+h2,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif !important;
+  line-height: 1.2;
+  font-weight: 900;
+}
+h3 {
+  font-family: "Ubuntu", sans-serif !important;
+  font-size: 2rem;
+  font-weight: 1000 !important;
+}
+
+p {
+  font-family: "Montserrat-Black", sans-serif !important;
+  color: #494949;
+}
+
+/* navbar */
+.navbar {
+  justify-content: flex-end;
+}
+.navbar.bg-light {
+  background-color: #204051 !important;
+}
+.navbar-brand {
+  font-family: "Ubuntu", sans-serif;
+  color: #cae8d5 !important;
+  font-weight: 900;
+  font-size: 1.5rem !important;
+}
+.nav-link {
+  color: #cae8d5 !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  margin: 0 10px !important;
+}
+.nav-link:hover {
+  color: #427e92 !important;
+  font-size: 1.21rem !important;
+}
+.navbar-nav {
+  margin-left: 3vw !important;
+  display: flexbox;
+  justify-content: space-evenly !important;
+}
+.nav-search {
+  margin-left: 5vw !important;
+  width: 35vw !important;
+}
+.btn-search {
+  margin-left: 0.85vw !important;
+}
+.btn-accounts {
+  margin-left: 13vw !important;
+}
+.btn-nav {
+  margin-left: 0.5vw !important;
+}
+
+/* FORM */
+/* Signup form */
+.register-container {
+  background-image: linear-gradient(
+    to right,
+    #037377,
+    #007272 50%,
+    #e7e7de 50%,
+    #e7e7de
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.loginbox {
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  border: 0.2px solid rgba(255, 255, 255, 0.562);
+  width: 30vw;
+  height: 75vh;
+  background: rgba(0, 0, 0, 0.993) !important;
+  color: #eee;
+  position: relative;
+  box-sizing: border-box;
+  padding: 5px 15px !important;
+  left: 55%;
+  border-radius: 4%;
+  text-align: left;
+}
+
+.form-points {
+  overflow-y: scroll;
+}
+
+.login-font {
+  margin-top: 5vh;
+  color: #eee;
+  margin-bottom: 0.5vh;
+  font-size: 3rem;
+  transform: translate(3%, -40%);
+  padding: 0 0 5px;
+  text-align: center;
+}
+
+.loginbox p {
+  margin: 1rem;
+  font-size: 1.7rem;
+  margin-left: 15%;
+  width: 70%;
+  color: #eee;
+  font-weight: bold;
+  position: relative;
+  font-family: "Ubuntu" !important;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.loginbox input,
+.input-options {
+  font-size: 16px;
+  color: #eee;
+  background: transparent;
+  height: 30px;
+  width: 60%;
+  margin-left: 15%;
+  margin-bottom: 20px;
+  position: relative;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+  border-color: #76fff1;
+}
+
+.loginbox input:hover {
+  font-size: 16.5px;
+  color: #eee;
+}
+
+.input-options {
+  color: grey;
+}
+
+.input-options:hover {
+  font-size: 16.5px;
+}
+
+.btn-form {
+  text-align: center;
+  width: 15vw;
+  margin: 10%;
+  margin-left: 15%;
+  border: none;
+  outline: none;
+  height: 5vh;
+  background-image: linear-gradient(
+    to right,
+    #00818a,
+    #07a8b0,
+    #0b8a84,
+    #07b061dc
+  );
+  color: #eee;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.btn-form:hover {
+  transform: scale(1.05);
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tidy Up- Sign Up</title>
+    <link rel="stylesheet" href="css/sign-up.css" />
+
+    <!-- css style sheet -->
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <!-- font awesome link -->
+    <script
+      src="https://kit.fontawesome.com/e58d4fb0ce.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <!-- various links for bootstrap -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- google fonts link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section class="title-navbar">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Tidy Up</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Categories
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Girls Summer</a></li>
+                  <li><a class="dropdown-item" href="#">Girls Winter</a></li>
+                  <li><a class="dropdown-item" href="#">Boys Summer</a></li>
+                  <li><a class="dropdown-item" href="#">Boys Winter</a></li>
+                  <li><a class="dropdown-item" href="#">Kids</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="nav-search d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search by School"
+                aria-label="Search"
+              />
+              <button class="btn btn-search btn-outline-light" type="submit">
+                Search
+              </button>
+            </form>
+            <div class="btn-accounts">
+              <a class="btn btn-nav btn-info" href="#">Login</a>
+              <!-- <a class="btn btn-nav btn-info" href="#">Logout</a> -->
+
+              <a class="btn btn-nav btn-outline-info" href="#">Sign up</a>
+              <a class="btn btn-nav btn-outline-light" href="#">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <!-- Signup form -->
+    <section class="container-fluid">
+      <div class="card register-container">
+        <div class="card loginbox">
+          <h1 class="login-font">Sign up below</h1>
+          <form class="form-points">
+            <p>First name</p>
+            <input type="text" name="" placeholder="first name" />
+            <p>Last name</p>
+            <input type="text" name="" placeholder="last name" />
+            <p>Email Id</p>
+            <input type="email" name="" placeholder="example@gmail.com" />
+            <p>Password</p>
+            <input type="password" name="" placeholder="password" />
+            <p>Confirm Password</p>
+            <input type="password" name="" placeholder="confirm password" />
+            <button class="btn-form" type="button" name="button">Sign in</button
+            ><br /><br />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+
+    <!-- <footer class="block-area footer-section container-fluid">
+      <div class="main-content">
+        <div class="left box">
+          <h2>About Us</h2>
+          <div class="content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              necessitatibus! Provident, placeat et nesciunt nobis dolorum
+              tempora laudantium repudiandae necessitatibus beatae, suscipit
+              optio doloribus obcaecati doloremque, iure laboriosam amet
+              voluptatibus?
+            </p>
+            <div class="social">
+              <a class="icon-footer" href="#"
+                ><span class="fab fa-facebook-f"></span
+              ></a>
+              <a class="icon-footer" href="#"
+                ><span class="fab fa-twitter"></span
+              ></a>
+              <a class="icon-footer" href="#"
+                ><span class="fab fa-instagram"></span
+              ></a>
+              <a class="icon-footer" href="#"
+                ><span class="fab fa-linkedin"></span
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="center box">
+          <h2>Address</h2>
+          <div class="content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="text"
+                >9301 Roberts Street Duvernay-Est, QC H7A 2M7</span
+              >
+            </div>
+
+            <div class="phone">
+              <span class="fas fa-phone"></span>
+              <span class="text">425-785-5798</span>
+            </div>
+
+            <div class="email">
+              <span class="fas fa-envelope"></span>
+              <span class="text">XYZABC@email.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"
+  ></script>
+</html>

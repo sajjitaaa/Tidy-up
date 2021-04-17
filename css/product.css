@@ -1,24 +1,93 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #cccccc;
+  font-family: "Montserrat", sans-serif;
+  align-items: center;
+}
+h1,
+h2,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif !important;
+  line-height: 1.2;
+  font-weight: 900;
+}
+h3 {
+  font-family: "Ubuntu", sans-serif !important;
+  font-size: 2rem;
+  font-weight: 1000 !important;
+}
+
+p {
+  font-family: "Montserrat-Black", sans-serif !important;
+  color: #494949;
+}
+
+/* navbar */
+.navbar {
+  justify-content: flex-end;
+}
+.navbar.bg-light {
+  background-color: #204051 !important;
+}
+.navbar-brand {
+  font-family: "Ubuntu", sans-serif;
+  color: #cae8d5 !important;
+  font-weight: 900;
+  font-size: 1.5rem !important;
+}
+.nav-link {
+  color: #cae8d5 !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  margin: 0 10px !important;
+}
+.nav-link:hover {
+  color: #427e92 !important;
+  font-size: 1.21rem !important;
+}
+.navbar-nav {
+  margin-left: 3vw !important;
+  display: flexbox;
+  justify-content: space-evenly !important;
+}
+.nav-search {
+  margin-left: 5vw !important;
+  width: 35vw !important;
+}
+.btn-search {
+  margin-left: 0.85vw !important;
+}
+.btn-accounts {
+  margin-left: 13vw !important;
+}
+.btn-nav {
+  margin-left: 0.5vw !important;
+}
 /* product display and sidebar */
-.main-content{
-    margin: 2%;
-    align-items: center !important;
+.main-content {
+  margin: 2%;
+  align-items: center !important;
 }
 .main-content .card {
-    padding: 2% !important;
-    background-color: rgb(212, 226, 250) !important;
+  padding: 2% !important;
+  background-color: rgb(212, 226, 250) !important;
 }
-.card-sidebar{
-    margin: 0% 4% 5% 1%;
+.card-sidebar {
+  margin: 0% 4% 5% 1%;
 }
 /* product-details page */
-.product-img , .product-details{
-    margin: 2% auto;
-    
+.product-img,
+.product-details {
+  margin: 2% auto;
 }
 
 .card-main {
-    margin: 2%;
-    padding: 1% !important;
-    display: flex;
-    justify-content: space-evenly;
+  margin: 2%;
+  padding: 1% !important;
+  display: flex;
+  justify-content: space-evenly;
 }
