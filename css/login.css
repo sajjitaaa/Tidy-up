@@ -72,8 +72,8 @@ p {
 .register-container {
   background-image: linear-gradient(
     to right,
-    #037377,
-    #007272 50%,
+    #204051,
+    #427e92 50%,
     #e7e7de 50%,
     #e7e7de
   );
@@ -160,10 +160,10 @@ input[type="password"]:hover {
   height: 5vh;
   background-image: linear-gradient(
     to right,
-    #00818a,
-    #07a8b0,
-    #0b8a84,
-    #07b061dc
+    #204051,
+    #427e92,
+    #66bbb7,
+    #52a3a8dc
   );
   color: #eee;
   font-size: 1.5rem;

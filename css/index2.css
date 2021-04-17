@@ -59,6 +59,9 @@ p {
   font-size: 1.5rem !important;
   margin-left: 5% !important;
 }
+.navbar.bg-light {
+  background-color: #204051 !important;
+}
 /* .navbar-brand {
   width: 3%;
   height: auto;
