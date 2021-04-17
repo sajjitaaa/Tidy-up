@@ -8,14 +8,14 @@ body {
 }
 h1,
 h2,
-h4,
-h5,
-h6 {
+h4 {
   font-family: "Montserrat", sans-serif !important;
   line-height: 1.2;
   font-weight: 900;
 }
-h3 {
+h3,
+h5,
+h6 {
   font-family: "Ubuntu", sans-serif !important;
   font-size: 2rem;
   font-weight: 1000 !important;
@@ -74,7 +74,7 @@ p {
 }
 .main-content .card {
   padding: 2% !important;
-  background-color: rgb(212, 226, 250) !important;
+  background-color: #cae8d5 !important;
 }
 .card-sidebar {
   margin: 0% 4% 5% 1%;
@@ -90,4 +90,128 @@ p {
   padding: 1% !important;
   display: flex;
   justify-content: space-evenly;
+}
+/* Footer section */
+
+.footer-section {
+  width: 96%;
+  overflow: hidden;
+  position: relative;
+  margin-right: 2vw !important;
+  margin-left: 2vw;
+  margin-bottom: 4vh !important;
+  background-color: #cae8d5 !important;
+}
+.icon-footer {
+  color: chocolate;
+}
+.icon-footer :hover {
+  color: #fff6a9 !important;
+}
+.main-content .box {
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2 {
+  font-family: "Ubuntu", sans-serif !important;
+  font-size: 1.525rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.box .content {
+  margin: 20px 20px 0 0;
+}
+
+.left .content p {
+  text-align: justify;
+}
+.left .content .social {
+  margin: 20px 0 0 0;
+}
+
+.left .content .social a {
+  padding: 0 2px;
+}
+
+.left .content .social a span {
+  height: 40px;
+  width: 40px;
+  background: #1a1a1a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.left .content .social a span:hover {
+  background: #427e92;
+}
+
+.center {
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .list {
+    margin: 10px;
+  }
+
+  .logo {
+    height: 10vw;
+    width: 10vw;
+    border-radius: 50%;
+  }
+
+  .list-links {
+    font-size: 4vw;
+    font-weight: 300;
+
+    padding: 20px 20px;
+    text-decoration: none;
+  }
+
+  .main-content .box {
+    flex-basis: 50%;
+    padding: 4px 8px;
+  }
+
+  .box h2 {
+    font-size: 0.8rem;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+
+  .box .content {
+    margin: 3px 3px 0 0;
+  }
+
+  .left .content p {
+    text-align: justify;
+    font-size: 8px;
+  }
+  .left .content .social {
+    margin: 4px 0 0 0;
+  }
+
+  .left .content .social a {
+    padding: 0 2px;
+  }
+
+  .left .content .social a span {
+    height: 30px;
+    width: 30px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 3px;
+    transition: 0.3s;
+  }
+
+  .left .content .social a span:hover {
+    background: #427e92;
+  }
 }
