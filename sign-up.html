@@ -44,7 +44,7 @@
       <!-- navbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Tidy Up</a>
+          <a class="navbar-brand" href="index.html">Tidy Up</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -79,11 +79,9 @@
                   Categories
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Girls Summer</a></li>
-                  <li><a class="dropdown-item" href="#">Girls Winter</a></li>
-                  <li><a class="dropdown-item" href="#">Boys Summer</a></li>
-                  <li><a class="dropdown-item" href="#">Boys Winter</a></li>
-                  <li><a class="dropdown-item" href="#">Kids</a></li>
+                  <li><a class="dropdown-item" href="#">Girls </a></li>
+                  <li><a class="dropdown-item" href="#">Boys </a></li>
+                  <li><a class="dropdown-item" href="#">Accessories</a></li>
                 </ul>
               </li>
             </ul>
@@ -99,11 +97,13 @@
               </button>
             </form>
             <div class="btn-accounts">
-              <a class="btn btn-nav btn-info" href="#">Login</a>
+              <a class="btn btn-nav btn-info" href="login.html">Login</a>
               <!-- <a class="btn btn-nav btn-info" href="#">Logout</a> -->
 
-              <a class="btn btn-nav btn-outline-info" href="#">Sign up</a>
-              <a class="btn btn-nav btn-outline-light" href="#">
+              <a class="btn btn-nav btn-outline-info" href="sign-up.html"
+                >Sign up</a
+              >
+              <a class="btn btn-nav btn-outline-light" href="{% url 'cart' %}">
                 <i class="fas fa-shopping-cart"></i>
               </a>
             </div>
