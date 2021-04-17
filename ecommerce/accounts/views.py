@@ -29,7 +29,7 @@ def login_view(request):
         # user.emailconfirmed.activate_user_email()
 
     context = {'form': form, "btn": btn}
-    return render(request, 'form.html', context)
+    return render(request, 'login.html', context)
 
 
 def registration_view(request):
@@ -46,7 +46,7 @@ def registration_view(request):
         # login(request, user)
 
     context = {'form': form, "btn": btn}
-    return render(request, 'form.html', context)
+    return render(request, 'sign-up.html', context)
 
 
 SHA1_RE = re.compile('^[a-f0-9]{40}$')
