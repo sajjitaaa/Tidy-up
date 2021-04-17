@@ -67,6 +67,9 @@ p {
 .btn-nav {
   margin-left: 0.5vw !important;
 }
+.product-img-grid {
+  height: 18vw !important;
+}
 /* product display and sidebar */
 .main-content {
   margin: 2%;
