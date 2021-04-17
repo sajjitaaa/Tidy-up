@@ -6,18 +6,18 @@ Welcome to
 {% include 'carousel.html' %}
 {% include 'cards.html' %}
 
-<div class="jumbotron">
+<!-- <div class="jumbotron">
    {% for product in products %}
    <a href='{% url 'single' product.slug %}'>{{ product.title }}</a>
    {{ product.price }}
-   {{ product.description }}
+   {{ product.description }} -->
 
    <!-- {{ product.productimage_set.all }} -->
 
 
-   {% for item in product.productimage_set.all %}
+   <!-- {% for item in product.productimage_set.all %}
    <img src="{{ MEDIA_URL }}/media/{{ item.image }}" alt="not">
    {% endfor %}
    {% endfor %}
- </div>
+ </div> -->
 {% endblock %}

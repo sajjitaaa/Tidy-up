@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Product, ProductImage, Variation
+from .models import Product, ProductImage, Variation, Category
 # Register your models here.
 
 
@@ -15,6 +15,12 @@ class ProductAdmin(admin.ModelAdmin):
 	class Meta:
 		model = Product
 
+
+class CategoryAdmin(admin.ModelAdmin):
+	list_display = ['title', 'slug']
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductImage)
 admin.site.register(Variation)
+# admin.site.register(Category)
+admin.site.register(Category, CategoryAdmin)

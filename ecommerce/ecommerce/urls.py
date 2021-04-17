@@ -37,6 +37,10 @@ urlpatterns = [
     url(r'^accounts/logout/$', accountviews.logout_view, name='auth_logout'),
     url(r'^accounts/login/$', accountviews.login_view, name='auth_login'),
     url(r'^accounts/register/$', accountviews.registration_view, name='auth_register'),
+    url(r'^accounts/activate/(?P<activation_key>\w+)/$', accountviews.activation_view, name="activation_view"),
+    url(r'^ajax/add_user_address/$', accountviews.add_user_address, name="ajax_add_user_adddress"),
+    url(r'^accounts/address/add/$', accountviews.add_user_address, name="add_user_address"),
+    # url('<slug:slug>/', views.category_detail, name='category_detail'),
 ]
 
 if settings.DEBUG:

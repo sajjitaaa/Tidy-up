@@ -11,7 +11,8 @@ from django.contrib.auth import get_user_model
 
 
 
-User = get_user_model()
+# User = get_user_model()
+settings.AUTH_USER_MODEL
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -61,4 +62,4 @@ def user_created(sender, instance, created, *args, **kwargs):
 
 
 
-post_save.connect(user_created, sender=User)
+post_save.connect(user_created, sender=settings.AUTH_USER_MODEL)

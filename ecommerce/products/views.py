@@ -1,5 +1,6 @@
-from django.shortcuts import render, Http404
-from .models import Product, ProductImage
+from django.shortcuts import render, Http404, get_object_or_404
+from .models import Product, ProductImage, Category
+
 # Create your views here.
 
 
@@ -9,7 +10,7 @@ def search(request):
     except:
         q = None
     if q:
-        products = Product.objects.filter(title__icontains=q)
+        products = Product.objects.filter(title__startswith=q)
         context = {'query': q, 'products': products}
         template = 'products/results.html'
     else:
@@ -43,3 +44,33 @@ def single(request, slug):
         raise Http404
 
     return render(request, template, context)
+
+
+# def filter(request):
+#     categories = Category.objects.all()
+#     categoryID = request.GET.get('category')
+#     if categoryID:
+#         products = Product.get_all_products_by_categoryid(categoryID)
+#     else:
+#         products = Product.get_all_products();
+#
+#     data = {}
+#     data['products'] = products
+#     data['categories'] = categories
+
+
+# def menu_categories(request):
+#     categories = Category.objects.filter(parent=None)
+#     return {"menu_categories": categories}
+#
+#
+# def category_detail(request, slug):
+#     category = get_object_or_404(Category, slug=slug)
+#     products = category.products.filter(parent=None)
+#
+#     context = {
+#         'category': category,
+#         'products': products
+#     }
+#
+#     return render(request, 'category_detail.html', context)

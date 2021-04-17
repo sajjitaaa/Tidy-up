@@ -1,8 +1,15 @@
 from django import forms
 from django.contrib.auth import get_user_model
-
+from .models import UserAddress
 
 User = get_user_model()
+
+
+class UserAddressForm(forms.ModelForm):
+    default = forms.BooleanField(label="Make default")
+    class Meta:
+        model = UserAddress
+        fields = ["address", "address2", "city", "state", "country", "zipcode", "phone"]
 
 
 class LoginForm(forms.Form):

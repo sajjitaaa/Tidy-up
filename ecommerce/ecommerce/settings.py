@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 DEFAULT_FROM_EMAIL = "yuktibajaj85@yahoo.com"
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_EMAIL_VERIFICATION = "none"
 try:
     from .email_settings import host, user, password
     EMAIL_HOST = host #"smtp.gmail.com" #"smtp.sendgrid.net"
@@ -39,8 +40,9 @@ try:
 except:
     pass
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-ACCOUNT_EMAIL_VERIFICATION = "none"
+if DEBUG:
+    SITE_URL = "http://127.0.0.1:8000"
+
 
 
 # Application definition
@@ -55,8 +57,8 @@ INSTALLED_APPS = [
     'products',
     'carts',
     'orders',
-
     'accounts.apps.AccountsConfig',
+    'localflavor',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +69,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'ecommerce.urls'
@@ -133,6 +136,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+DEFAULT_TAX_RATE = 0.08
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

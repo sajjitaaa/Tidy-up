@@ -29,10 +29,13 @@ Products ||
 
 			<a href="{{ product.get_absolute_url }}">
 				<div class="mask">
-					<img
+					<!-- <img
 						class="img-fluid w-100"
 						src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg"
-					/>
+					/> -->
+					{% for item in product.productimage_set.all %}
+			    <img src="{{ MEDIA_URL }}/media/{{ item.image }}" alt="not">
+			    {% endfor %}
 					<div class="mask rgba-black-slight"></div>
 				</div>
 			</a>
