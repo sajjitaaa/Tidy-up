@@ -13,7 +13,7 @@ from accounts.forms import UserAddressForm
 def logout_view(request):
     logout(request)
     messages.success(request, "succesfully logged out!")
-    return HttpResponseRedirect('%s' % (reverse("auth_login")))
+    return HttpResponseRedirect('%s' % (reverse("home")))
 
 
 def login_view(request):

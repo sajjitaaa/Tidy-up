@@ -11,7 +11,19 @@ from django.urls import reverse
 # 	('Kindergarten', 'kindergarten'),
 # 	)
 
+class School(models.Model):
+	name = models.CharField(max_length=120)
+	address = models.CharField(max_length=120)
+	phone = models.CharField(max_length=120)
+	description = models.TextField(null=True, blank=True)
+	slug = models.SlugField(unique=True)
 
+	def __str__(self):
+		return self.name
+
+	class Meta:
+		unique_together = ('slug', 'name')
+		verbose_name_plural = "schools"
 
 
 

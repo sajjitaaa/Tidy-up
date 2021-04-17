@@ -1,5 +1,5 @@
 from django.shortcuts import render, Http404, get_object_or_404
-from .models import Product, ProductImage, Category
+from .models import Product, ProductImage, Category, School
 
 # Create your views here.
 
@@ -74,3 +74,11 @@ def single(request, slug):
 #     }
 #
 #     return render(request, 'category_detail.html', context)
+
+
+
+def allSchools(request):
+    schools = School.objects.all()
+    context = {'schools': schools}
+    template = 'products/allschools.html'
+    return render(request, template, context)

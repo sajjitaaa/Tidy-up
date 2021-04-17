@@ -3,21 +3,347 @@
 Welcome to
 {% endblock %}
 {% block content %}
-{% include 'carousel.html' %}
-{% include 'cards.html' %}
+{% load static %}
+<section class="colored-section" id="title-section">
 
-<!-- <div class="jumbotron">
+    {% include 'carousel.html' %}
+  
+    </section>
+
+
+
+ <!-- <div class="jumbotron">
    {% for product in products %}
    <a href='{% url 'single' product.slug %}'>{{ product.title }}</a>
    {{ product.price }}
-   {{ product.description }} -->
+   {{ product.description }}
 
-   <!-- {{ product.productimage_set.all }} -->
+   {{ product.productimage_set.all }}
 
 
-   <!-- {% for item in product.productimage_set.all %}
+    {% for item in product.productimage_set.all %}
    <img src="{{ MEDIA_URL }}/media/{{ item.image }}" alt="not">
    {% endfor %}
    {% endfor %}
  </div> -->
+
+ <!-- Features -->
+ <section class="white-section" id="features">
+   <div class="container-fluid">
+     <div class="row">
+       <div class="feature-box col-lg-4">
+         <i class="icon fas fa-check-circle fa-4x"></i>
+         <h3 class="features-title">Easy to use.</h3>
+         <p class="feature-text">
+           So easy to use, even your child could use it.
+         </p>
+       </div>
+
+       <div class="feature-box col-lg-4">
+         <i class="icon fas fa-bullseye fa-4x"></i>
+         <h3 class="features-title">Elite Clientele</h3>
+         <p class="feature-text">
+           We have all the uniforms, from the top schools of India.
+         </p>
+       </div>
+
+       <div class="feature-box col-lg-4">
+         <i class="icon fas fa-heart fa-4x"></i>
+         <h3 class="features-title">Guaranteed to work.</h3>
+         <p class="feature-text">
+           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni,
+           iste?
+         </p>
+       </div>
+     </div>
+   </div>
+ </section>
+
+
+
+ <section class="school-display-section colored-section-2" id="schools">
+   <div class="container-fluid">
+     <div class="cards cards-outer wrapper" id="school-section">
+       <div class="loading">
+         <span>Schools</span>
+       </div>
+       <!-- <h3 class="loading">Schools</h3> -->
+       <div class="row">
+         <div
+           class="cols col-sm-3"
+           ontouchstart="this.classList.toggle('hover');"
+         >
+           <div class="card text-dark mb-3" style="width: 18rem">
+             <img
+               src="{% static 'img\school-img.jpg' %}"
+               class="car-img-top"
+               alt="..."
+             />
+             <div style="text-align: left" class="card-body">
+               <h5 class="card-title">Ryan International School</h5>
+               <hr />
+               <a href="product-by-school.html" class="btn btn-primary"
+                 >Show uniforms</a
+               >
+             </div>
+           </div>
+         </div>
+         <div
+           class="cols col-sm-3"
+           ontouchstart="this.classList.toggle('hover');"
+         >
+           <div class="card text-dark mb-3" style="width: 18rem">
+             <img
+               src="{% static 'img\school-img.jpg' %}"
+               class="car-img-top"
+               alt="..."
+             />
+             <div style="text-align: left" class="card-body">
+               <h5 class="card-title">Delhi Public School</h5>
+               <hr />
+               <a href="product-by-school.html" class="btn btn-primary"
+                 >Show uniforms</a
+               >
+             </div>
+           </div>
+         </div>
+         <div
+           class="cols col-sm-3"
+           ontouchstart="this.classList.toggle('hover');"
+         >
+           <div class="card text-dark mb-3" style="width: 18rem">
+             <img
+               src="{% static 'img\school-img.jpg' %}"
+               class="car-img-top"
+               alt="..."
+             />
+             <div style="text-align: left" class="card-body">
+               <h5 class="card-title">Amity International School</h5>
+               <hr />
+               <a href="product-by-school.html" class="btn btn-primary"
+                 >Show uniforms</a
+               >
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="all-school-btn">
+         <a
+           type="button"
+           href="#"
+           class="btn btn-dark btn-next btn-all-schools round"
+           >All Schools &raquo;
+         </a>
+       </div>
+     </div>
+   </div>
+ </section>
+
+
+
+ <!-- Uniforms section -->
+ <section class="uniform-display-section white-section" id="uniforms">
+   <div class="container-fluid">
+     <div class="cards cards-outer wrapper" id="uniform-section">
+       <h3>Uniforms</h3>
+       <div class="row">
+         <div
+           class="cols col-sm-3"
+           ontouchstart="this.classList.toggle('hover');"
+         >
+           <div class="card text-dark mb-3" style="width: 18rem">
+             <img
+               src="https://5.imimg.com/data5/NN/RH/MY-3624146/school-uniform-shirts-500x500.jpg"
+               class="car-img-top"
+               alt="..."
+             />
+             <div style="text-align: left" class="card-body">
+               <h5 class="card-title">Shirts</h5>
+               <hr />
+               <a href="product-by-school.html" class="btn btn-primary"
+                 >View all</a
+               >
+             </div>
+           </div>
+         </div>
+         <div
+           class="cols col-sm-3"
+           ontouchstart="this.classList.toggle('hover');"
+         >
+           <div class="card text-dark mb-3" style="width: 18rem">
+             <img
+               src="https://4.imimg.com/data4/JE/UJ/MY-28406737/school-pant-500x500.jpg"
+               class="car-img-top"
+               alt="..."
+             />
+             <div style="text-align: left" class="card-body">
+               <h5 class="card-title">Trousers</h5>
+               <hr />
+               <a href="product-by-school.html" class="btn btn-primary"
+                 >View all</a
+               >
+             </div>
+           </div>
+         </div>
+         <div
+           class="cols col-sm-3"
+           ontouchstart="this.classList.toggle('hover');"
+         >
+           <div class="card text-dark mb-3" style="width: 18rem">
+             <img
+               src="https://5.imimg.com/data5/SELLER/Default/2020/11/DX/IW/GP/24704767/uc-gss-008-girl-school-skirt-500x500.jpg"
+               class="car-img-top"
+               alt="..."
+             />
+             <div style="text-align: left" class="card-body">
+               <h5 class="card-title">Skirts</h5>
+               <hr />
+               <a href="product-by-school.html" class="btn btn-primary"
+                 >View all</a
+               >
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
+
+
+ <!-- Reviews -->
+ <section class="colored-section" id="reviews">
+   <div class="container-fluid">
+     <div class="loading">
+       <span>Reviews</span>
+     </div>
+     <div
+       id="carousel-Testimonials"
+       class="carousel slide"
+       data-ride="carousel"
+     >
+       <div class="carousel-inner">
+         <div class="carousel-item active">
+           <h2 class="testimonial-text">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+           </h2>
+           <img
+             class="testimonial-img"
+             src="{% static 'img\women-profile.png' %}"
+             alt="dog-profile"
+           />
+           <em>User1, New Delhi</em>
+         </div>
+
+         <div class="carousel-item c">
+           <h2 class="testimonial-text">
+             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+           </h2>
+           <img
+             class="testimonial-img"
+             src="{% static 'img\man-profile.png' %}"
+             alt="lady-profile"
+           />
+           <em>User3, Noida</em>
+         </div>
+
+         <div class="carousel-item">
+           <h2 class="testimonial-text">
+             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+           </h2>
+           <img
+             class="testimonial-img"
+             src="{% static 'img\women-profile.png' %}"
+             alt="dog-profile"
+           />
+           <em>User2, Gurgaon</em>
+         </div>
+
+         <a
+           class="carousel-control-prev"
+           href="#carousel-Testimonials"
+           role="button"
+           data-slide="prev"
+         >
+           <span
+             class="carousel-control-prev-icon"
+             aria-hidden="true"
+           ></span>
+         </a>
+         <a
+           class="carousel-control-next"
+           href="#carousel-Testimonials"
+           role="button"
+           data-slide="next"
+         >
+           <span
+             class="carousel-control-next-icon"
+             aria-hidden="true"
+           ></span>
+         </a>
+       </div>
+     </div>
+   </div>
+ </section>
+
+
+
+ <footer class="white-section footer-section container-fluid">
+   <div class="main-content">
+     <div class="left box">
+       <h2>About Us</h2>
+       <div class="content">
+         <p>
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+           necessitatibus! Provident, placeat et nesciunt nobis dolorum
+           tempora laudantium repudiandae necessitatibus beatae, suscipit
+           optio doloribus obcaecati doloremque, iure laboriosam amet
+           voluptatibus?
+         </p>
+         <div class="social">
+           <a class="icon-footer" href="#"
+             ><span class="fab fa-facebook-f"></span
+           ></a>
+           <a class="icon-footer" href="#"
+             ><span class="fab fa-twitter"></span
+           ></a>
+           <a class="icon-footer" href="#"
+             ><span class="fab fa-instagram"></span
+           ></a>
+           <a class="icon-footer" href="#"
+             ><span class="fab fa-linkedin"></span
+           ></a>
+         </div>
+       </div>
+     </div>
+
+     <div class="center box">
+       <h2>Address</h2>
+       <div class="content">
+         <div class="place">
+           <span class="fas fa-map-marker-alt"></span>
+           <span class="text"
+             >9301 Roberts Street Duvernay-Est, QC H7A 2M7</span
+           >
+         </div>
+
+         <div class="phone">
+           <span class="fas fa-phone"></span>
+           <span class="text">425-785-5798</span>
+         </div>
+
+         <div class="email">
+           <span class="fas fa-envelope"></span>
+           <span class="text">XYZABC@email.com</span>
+         </div>
+
+         <div class="copyright-text">
+           <!-- <span class="fas fa-phone"></span> -->
+           <span class="text">© Copyright 2021 Tidy Up</span>
+         </div>
+       </div>
+     </div>
+   </div>
+ </footer>
+
 {% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ form_title }}</h1>
+<form method='POST'action='' >
+  {% csrf_token %}
+  {{ form.as_p }}
+  {% if btn %}{{ btn }}{% else %}Submit{% endif %}
+  <input type="submit" class="btn btn-default" name=""  value="{% if btn %}{{btn}}{% else %}Submit{% endif %}">
+</form>
+
+{% endblock %}

@@ -1,52 +1,20 @@
-<!-- <nav class="navbar navbar-default navbar-static-top">
- <div class="container">
-   <div class="navbar-header">
-     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-       <span class="sr-only">Toggle navigation</span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-     </button>
-     <a class="navbar-brand" href="{% url 'home' %}">UNIFORMS</a>
-   </div>
-   <div id="navbar" class="navbar-collapse collapse">
-     <ul class="nav navbar-nav">
-       <li class="active"><a href="{% url 'home' %}">Home</a></li>
-       <li><a href="#about">About</a></li>
-       <li><a href="#contact">Contact</a></li>
 
-     </ul>
-     <form class="navbar-form navbar-left" role="search" action='/s/'>
-            <div class="form-group">
-          <input type="text" class="form-control" name='q' placeholder="Search Product Title">
-            </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-     <ul class="nav navbar-nav navbar-right">
-       <li><a href="{% url 'allproducts' %}">Products</a></li>
-       <li><a href="{% url 'cart' %}">Cart({{ request.session.items_total }})</a></li>
-       {% if user.is_authenticated %}
-       <li><a href="#">Account</a></li>
-       {% endif %}
+{% load static %}
+<link rel="stylesheet" href='{% static "css/index2.css" %}'/>
 
-
-     </ul>
-   </div>/.nav-collapse -->
-<!-- </div>
-</nav> -->
-
-<!-- <link rel="stylesheet" href="css/index2.css" />
-<!-- css style sheet -->
-<!--
 <link
   rel="stylesheet"
   href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
   integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
   crossorigin="anonymous"
-/> -->
-
-<!-- font awesome link -->
-<!-- <script
+/>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+  crossorigin="anonymous"
+/>
+<script
   src="https://kit.fontawesome.com/e58d4fb0ce.js"
   crossorigin="anonymous"
 ></script>
@@ -54,158 +22,29 @@
 <link
   href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
   rel="stylesheet"
-/> -->
-<!-- various links for bootstrap -->
-<!-- <meta
+/>
+<meta
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
-/> -->
-
-<!-- google fonts link -->
-<!-- <link
+/>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+  crossorigin="anonymous"
+></script>
+<link
   href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap"
   rel="stylesheet"
-/>
-
-<section class="title-navbar"> -->
-  <!-- navbar -->
-  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}">Tidy Up</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a
-              class="nav-link active"
-              aria-current="page"
-              href="{% url 'home' %}"
-              >Home</a
-            >
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Categories
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
-              <!-- <li><a class="dropdown-item" href="#">Girls Summer</a></li>
-              <li><a class="dropdown-item" href="#">Girls Winter</a></li>
-              <li><a class="dropdown-item" href="#">Boys Summer</a></li>
-              <li><a class="dropdown-item" href="#">Boys Winter</a></li>
-              <li><a class="dropdown-item" href="#">Kids</a></li> -->
-
-              <!-- {% for category in categories %}
-				           <li>
-                     <a href="/?category={{category.id}}"
-                      class="list-group-item list-group-item-action">{{category.title}}</a>
-                   </li>
-				{% endfor %} -->
-            <!-- </ul>
-          </li>
-        </ul>
-        <form class="navbar-form navbar-left" role="search" action="/s/">
-          <input
-            class="form-control me-2"
-            type="search"
-            name="q"
-            placeholder="Search by School"
-            aria-label="Search"
-          />
-
-          <button class="btn btn-search btn-outline-light" type="submit">
-            Search
-          </button>
-        </form>
-        <!-- <div class="btn-accounts">
-          <a class="btn btn-nav btn-info" href="#">Login</a>
-          <a class="btn btn-nav btn-outline-info" href="#">Sign up</a>
-          <a class="btn btn-nav btn-outline-light" href="#">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
-        </div> -->
-        <!-- <ul class="nav navbar-nav navbar-right">
-          <li><a href="{% url 'allproducts' %}">Products</a></li>
-
-          <li>
-            <a href="{% url 'cart' %}"
-              >Cart({{ request.session.items_total }})</a
-            >
-          </li>
-          {% if user.is_authenticated %}
-          <li><a class="btn btn-nav btn-outline-info" href="#">Account</a></li>
-          <li>
-            <a class="btn btn-nav btn-info" href="{% url 'auth_logout' %}"
-              >Logout</a
-            >
-          </li>
-          {% else %}
-          <li>
-            <a class="btn btn-nav btn-info" href="{% url 'auth_login' %}"
-              >Login</a>
-          </li>
-          <li>
-            <a class="btn btn-nav btn-info" href="{% url 'auth_register' %}"
-              >Register</a>
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-    </div>
-  </nav>
-</section>  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% load static %}
-<!-- <link rel="stylesheet" href='{% static "css/index2.css" %}'/> -->
-<link rel="stylesheet" href='{% static "css/bootstrap.min.css" %}'/ >
-<link rel="stylesheet" href='{% static "css/bootstrap-theme.min.css" %}'/>
-<link rel="stylesheet" href='{% static "css/index2.css" %}'/>
-
-<!-- <link rel="stylesheet" href="css/index2.css" /> -->
-<!-- css style sheet -->
-
-<style background-color= '#204051;'>
-
-</style>
-<link
-  rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-  crossorigin="anonymous"
 />
 
 <!-- font awesome link -->
@@ -229,110 +68,84 @@
   href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap"
   rel="stylesheet"
 />
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+       <!-- <a class="navbar-brand" href="index.html"
+         ><img class="navbar-logo" src="images/Tu-logo.png" alt="Tidy-Up"
+       /></a> -->
+       <a class="navbar-brand" href="{% url 'home' %}">Tidy Up</a>
+       <button
+         class="navbar-toggler"
+         type="button"
+         data-toggle="collapse"
+         data-target="#navbarSupportedContent"
+         aria-controls="navbarSupportedContent"
+         aria-expanded="false"
+         aria-label="Toggle navigation"
+         data-bs-toggle="collapse"
+         data-bs-target="#navbarSupportedContent"
+       >
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           <li class="nav-item">
+             <a class="nav-link active" aria-current="page" href="{% url 'home' %}"
+               >Home</a
+             >
+           </li>
 
+           <li class="nav-item dropdown">
+             <a
+               class="nav-link dropdown-toggle"
+               href="#"
+               id="navbarDropdown"
+               role="button"
+               data-toggle="dropdown"
+               aria-haspopup="true"
+               aria-expanded="false"
+               data-bs-toggle="dropdown"
+               aria-expanded="false"
+             >
+               Categories
+             </a>
+             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <li>
+                 <a class="dropdown-item" href="{% url 'allproducts' %}"
+                   >All products</a
+                 >
+               </li>
+               <li><a class="dropdown-item" href="#">Girls Summer</a></li>
+               <li><a class="dropdown-item" href="#">Girls Winter</a></li>
+               <li><a class="dropdown-item" href="#">Boys Summer</a></li>
+               <li><a class="dropdown-item" href="#">Boys Winter</a></li>
+               <li><a class="dropdown-item" href="#">Kids</a></li>
+             </ul>
+           </li>
+         </ul>
+         <form class="nav-search d-flex" role="search" action="/s/">
+           <input
+             class="form-control me-2"
+             type="search"
+             placeholder="Search by School"
+             aria-label="Search"
+             name="q"
+           />
+           <button class="btn btn-search btn-outline-light" type="submit">
+             Search
+           </button>
+         </form>
+         <div class="btn-accounts">
+             {% if user.is_authenticated %}
+               <a class="btn btn-nav btn-info" href="{% url 'auth_logout' %}">Logout</a>
+             {% else %}
+               <a class="btn btn-nav btn-info" href="{% url 'auth_login' %}">Login</a>
+               <a class="btn btn-nav btn-outline-info" href="{% url 'auth_register' %}">Sign up</a>
+             {% endif %}
 
-<nav class="navbar navbar-expand-lg navbar-light">
-  <!-- <a class="navbar-brand" href="index.html"
-    ><img class="navbar-logo" src="images/Tu-logo.png" alt="Tidy-Up"
-  /></a> -->
-  <a class="navbar-brand" href="{% url 'home' %}">Tidy Up</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarSupportedContent"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"
-          >Home</a
-        >
-      </li>
+           <a class="btn btn-nav btn-outline-light" href="{% url 'cart' %}">
+             <i class="fas fa-shopping-cart">(({{request.session.items_total}}))</i>
+           </a>
+         </div>
 
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdown"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Categories
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li>
-            <a class="dropdown-item" href="{% url 'allproducts' %}"
-              >All products</a
-            >
-          </li>
-          <li><a class="dropdown-item" href="#">Girls Summer</a></li>
-          <li><a class="dropdown-item" href="#">Girls Winter</a></li>
-          <li><a class="dropdown-item" href="#">Boys Summer</a></li>
-          <li><a class="dropdown-item" href="#">Boys Winter</a></li>
-          <li><a class="dropdown-item" href="#">Kids</a></li>
-        </ul>
-      </li>
-    </ul>
-    <form class="nav-search d-flex" role="search" action="/s/">
-      <input
-        class="form-control me-2"
-        type="search"
-        placeholder="Search by School"
-        aria-label="Search"
-        name="q"
-      />
-      <button class="btn btn-search btn-outline-light" type="submit">
-        Search
-      </button>
-    </form>
-    <div class="btn-accounts">
-        {% if user.is_authenticated %}
-          <a class="btn btn-nav btn-info" href="{% url 'auth_logout' %}">Logout</a>
-        {% else %}
-          <a class="btn btn-nav btn-info" href="{% url 'auth_login' %}">Login</a>
-          <a class="btn btn-nav btn-outline-info" href="{% url 'auth_register' %}">Sign up</a>
-        {% endif %}
-
-      <a class="btn btn-nav btn-outline-light" href="{% url 'cart' %}">
-        <i class="fas fa-shopping-cart">({{ request.session.items_total }})</i>
-      </a>
-    </div>
-    <!-- <ul class="nav navbar-nav navbar-right">
-      <li><a href="{% url 'allproducts' %}">Products</a></li>
-
-      <li>
-        <a href="{% url 'cart' %}"
-          >Cart({{ request.session.items_total }})</a
-        >
-      </li>
-      {% if user.is_authenticated %}
-      <li>
-        <a class="btn btn-nav btn-outline-info" href="#">Account</a>
-      </li>
-      <li>
-        <a class="btn btn-nav btn-info" href="{% url 'auth_logout' %}"
-          >Logout</a
-        >
-      </li>
-      {% else %}
-      <li>
-        <a class="btn btn-nav btn-info" href="{% url 'auth_login' %}"
-          >Login</a
-        >
-      </li>
-      {% endif %}
-    </ul> -->
-  </div>
-</nav>
+       </div>
+     </nav>
