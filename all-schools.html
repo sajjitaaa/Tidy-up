@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Schools</title>
     <link rel="stylesheet" href="css/product.css" />
+    <link rel="stylesheet" href="css/all-school.css" />
 
     <!-- css style sheet -->
 
@@ -43,78 +44,293 @@
     <section class="title-navbar">
       <!-- navbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Tidy Up</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Home</a
-                >
-              </li>
-
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Categories
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li>
-                    <a class="dropdown-item" href="products.html"
-                      >All products</a
-                    >
-                  </li>
-                  <li><a class="dropdown-item" href="#">Girls </a></li>
-                  <li><a class="dropdown-item" href="#">Boys </a></li>
-                  <li><a class="dropdown-item" href="#">Accessories</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="nav-search d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search by School"
-                aria-label="Search"
-              />
-              <button class="btn btn-search btn-outline-light" type="submit">
-                Search
-              </button>
-            </form>
-            <div class="btn-accounts">
-              <a class="btn btn-nav btn-info" href="login.html">Login</a>
-              <!-- <a class="btn btn-nav btn-info" href="#">Logout</a> -->
-
-              <a class="btn btn-nav btn-outline-info" href="sign-up.html"
-                >Sign up</a
+        <a class="navbar-brand" href="index.html">Tidy Up</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
               >
-              <a class="btn btn-nav btn-outline-light" href="{% url 'cart' %}">
-                <i class="fas fa-shopping-cart"></i>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categories
               </a>
-            </div>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="products.html">All products</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Girls </a></li>
+                <li><a class="dropdown-item" href="#">Boys </a></li>
+                <li><a class="dropdown-item" href="#">Accessories</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="nav-search d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search by School"
+              aria-label="Search"
+            />
+            <button class="btn btn-search btn-outline-light" type="submit">
+              Search
+            </button>
+          </form>
+          <div class="btn-accounts">
+            <a class="btn btn-nav btn-info" href="login.html">Login</a>
+            <!-- <a class="btn btn-nav btn-info" href="#">Logout</a> -->
+
+            <a class="btn btn-nav btn-outline-info" href="sign-up.html"
+              >Sign up</a
+            >
+            <a class="btn btn-nav btn-outline-light" href="{% url 'cart' %}">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
           </div>
         </div>
       </nav>
+    </section>
+
+    <!-- main content -->
+    <section>
+      <div class="container-fluid">
+        <!-- back button -->
+        <div class="back-to-home">
+          <a
+            type="button"
+            href="index.html"
+            class="btn btn-dark btn-next btn-all-schools round"
+            >&laquo; Previous
+          </a>
+        </div>
+
+        <!-- cards -->
+        <section class="school-display-section colored-section-2" id="schools">
+          <div class="container-fluid">
+            <div class="cards cards-outer wrapper" id="school-section">
+              <div class="loading">
+                <span>Schools</span>
+              </div>
+              <!-- <h3 class="loading">Schools</h3> -->
+              <div class="row">
+                <div
+                  class="cols col-sm-4"
+                  ontouchstart="this.classList.toggle('hover');"
+                >
+                  <div class="card text-dark mb-3" style="width: 18rem">
+                    <img
+                      src="images/school-img.jpg"
+                      class="car-img-top"
+                      alt="..."
+                    />
+                    <div style="text-align: left" class="card-body">
+                      <h5 class="card-title">Ryan International School</h5>
+                      <hr />
+                      <a href="products.html" class="btn btn-primary"
+                        >Show uniforms</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="cols col-sm-4"
+                  ontouchstart="this.classList.toggle('hover');"
+                >
+                  <div class="card text-dark mb-3" style="width: 18rem">
+                    <img
+                      src="images/school-img.jpg"
+                      class="car-img-top"
+                      alt="..."
+                    />
+                    <div style="text-align: left" class="card-body">
+                      <h5 class="card-title">Ryan International School</h5>
+                      <hr />
+                      <a href="products.html" class="btn btn-primary"
+                        >Show uniforms</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="cols col-sm-4"
+                  ontouchstart="this.classList.toggle('hover');"
+                >
+                  <div class="card text-dark mb-3" style="width: 18rem">
+                    <img
+                      src="images/school-img.jpg"
+                      class="car-img-top"
+                      alt="..."
+                    />
+                    <div style="text-align: left" class="card-body">
+                      <h5 class="card-title">Ryan International School</h5>
+                      <hr />
+                      <a href="products.html" class="btn btn-primary"
+                        >Show uniforms</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="cols col-sm-4"
+                  ontouchstart="this.classList.toggle('hover');"
+                >
+                  <div class="card text-dark mb-3" style="width: 18rem">
+                    <img
+                      src="images/school-img.jpg"
+                      class="car-img-top"
+                      alt="..."
+                    />
+                    <div style="text-align: left" class="card-body">
+                      <h5 class="card-title">Ryan International School</h5>
+                      <hr />
+                      <a href="products.html" class="btn btn-primary"
+                        >Show uniforms</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="cols col-sm-4"
+                  ontouchstart="this.classList.toggle('hover');"
+                >
+                  <div class="card text-dark mb-3" style="width: 18rem">
+                    <img
+                      src="images/school-img.jpg"
+                      class="car-img-top"
+                      alt="..."
+                    />
+                    <div style="text-align: left" class="card-body">
+                      <h5 class="card-title">Ryan International School</h5>
+                      <hr />
+                      <a href="products.html" class="btn btn-primary"
+                        >Show uniforms</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="cols col-sm-4"
+                  ontouchstart="this.classList.toggle('hover');"
+                >
+                  <div class="card text-dark mb-3" style="width: 18rem">
+                    <img
+                      src="images/school-img.jpg"
+                      class="car-img-top"
+                      alt="..."
+                    />
+                    <div style="text-align: left" class="card-body">
+                      <h5 class="card-title">Ryan International School</h5>
+                      <hr />
+                      <a href="products.html" class="btn btn-primary"
+                        >Show uniforms</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="cols col-sm-4"
+                  ontouchstart="this.classList.toggle('hover');"
+                >
+                  <div class="card text-dark mb-3" style="width: 18rem">
+                    <img
+                      src="images/school-img.jpg"
+                      class="car-img-top"
+                      alt="..."
+                    />
+                    <div style="text-align: left" class="card-body">
+                      <h5 class="card-title">Ryan International School</h5>
+                      <hr />
+                      <a href="products.html" class="btn btn-primary"
+                        >Show uniforms</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="cols col-sm-4"
+                  ontouchstart="this.classList.toggle('hover');"
+                >
+                  <div class="card text-dark mb-3" style="width: 18rem">
+                    <img
+                      src="images/school-img.jpg"
+                      class="car-img-top"
+                      alt="..."
+                    />
+                    <div style="text-align: left" class="card-body">
+                      <h5 class="card-title">Ryan International School</h5>
+                      <hr />
+                      <a href="products.html" class="btn btn-primary"
+                        >Show uniforms</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="cols col-sm-4"
+                  ontouchstart="this.classList.toggle('hover');"
+                >
+                  <div class="card text-dark mb-3" style="width: 18rem">
+                    <img
+                      src="images/school-img.jpg"
+                      class="car-img-top"
+                      alt="..."
+                    />
+                    <div style="text-align: left" class="card-body">
+                      <h5 class="card-title">Ryan International School</h5>
+                      <hr />
+                      <a href="products.html" class="btn btn-primary"
+                        >Show uniforms</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="cols col-sm-4"
+                  ontouchstart="this.classList.toggle('hover');"
+                >
+                  <div class="card text-dark mb-3" style="width: 18rem">
+                    <img
+                      src="images/school-img.jpg"
+                      class="car-img-top"
+                      alt="..."
+                    />
+                    <div style="text-align: left" class="card-body">
+                      <h5 class="card-title">Ryan International School</h5>
+                      <hr />
+                      <a href="products.html" class="btn btn-primary"
+                        >Show uniforms</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </section>
     <!-- footer -->
 

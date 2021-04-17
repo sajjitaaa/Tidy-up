@@ -232,6 +232,7 @@ p {
     margin: 0 0 2rem 0;
   }
 }
+
 /* All schools btn */
 .btn-all-schools {
   margin: 2%;
@@ -248,11 +249,6 @@ p {
   background-color: #ddd;
   text-decoration: none;
   color: #1a1a1a;
-}
-
-.btn-previous {
-  background-color: #f1f1f1;
-  color: black;
 }
 
 .btn-next {

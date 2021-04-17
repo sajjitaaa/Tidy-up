@@ -40,9 +40,10 @@ class LoginForm(forms.Form):
 
 
 class RegistrationForm(forms.ModelForm):
+    username = forms.CharField()
     email = forms.CharField(label='Your Email')
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput())
-    password2 = forms.CharField(label='Password Confirmation', widget=forms.PasswordInput())
+    password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput())
 
     class Meta:
         model = User

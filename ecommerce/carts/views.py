@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponseRedirect
 from .models import Cart, CartItem
 from django.urls import reverse
 from products.models import Product, Variation
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -43,6 +44,7 @@ def view(request):
 		empty_message = "Your Cart is Empty, please keep shopping."
 		context = {"empty": True, "empty_message": empty_message}
 
+
 	template = "cart/view.html"
 	return render(request, template, context)
 
@@ -50,7 +52,7 @@ def view(request):
 
 
 
-
+@login_required
 def add_to_cart(request, slug):
     request.session.set_expiry(120000)
     try:
