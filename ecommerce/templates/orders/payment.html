@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+
+<style>
+  body {
+    font-family: "Montserrat", sans-serif;
+    text-align: left;
+    align-items: left;
+    margin: 8%;
+    margin-top: 5%;
+    background-color: #cae8d5 !important;
+  }
+  h1,
+  h2 {
+    font-weight: 900;
+  }
+  .card {
+    margin: 4% !important;
+  }
+  .payment-title {
+    font-family: "Ubuntu", sans-serif !important;
+
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .card-pymnt {
+    margin-top: 4% !important;
+    padding: 4% !important;
+    padding-top: 2% !important;
+    background-color: #427e92;
+    color: #cae8d5;
+  }
+  .register-container {
+    background-image: linear-gradient(
+      to right,
+      #204051,
+      #204051,
+      #427e92,
+      #427e92
+    );
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: auto;
+    margin-top: 5vh !important;
+    margin-bottom: 5vh !important;
+  }
+
+  .register-container p {
+    font-family: "Montserrat", sans-serif;
+
+    margin: 1rem;
+    font-size: 1.7rem;
+    margin-left: 15%;
+    width: 70%;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  .register-container input {
+    margin-left: 15%;
+    width: 60%;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .register-container input[type="number"] {
+    width: auto;
+    margin-left: 1%;
+  }
+  .register-container input[type="text"] {
+    height: 30px;
+    font-size: 16px;
+    position: relative;
+  }
+
+  .register-container input[type="text"]:hover {
+    font-size: 17px;
+  }
+
+  .btn-sumbit {
+    margin-top: 2% !important;
+    margin-left: 15% !important;
+  }
+</style>
+<script>
+    {% block jquery %}
+
+       Stripe.setPublishableKey('{{ stripe_pub }}');
+
+       jQuery(function($) {
+    $('#payment-form').submit(function(event) {
+      var $form = $(this);
+
+        //Disable the submit button to prevent repeated clicks
+      $form.find('button').prop('disabled', true);
+
+      Stripe.card.createToken($form, stripeResponseHandler);
+
+      // Prevent the form from submitting with the default action
+      return false;
+    });
+  });
+
+
+  function stripeResponseHandler(status, response) {
+    var $form = $('#payment-form');
+
+    if (response.error) {
+      // Show the errors on the form
+      $("#card_errors_div").removeClass("hidden");
+      $form.find('.payment-errors').text(response.error.message);
+      $form.find('button').prop('disabled', false);
+    } else {
+      $("#card_errors_div").addClass("hidden");
+      // response contains id and card, which contains additional card details
+      var token = response.id;
+      // Insert the token into the form so it gets submitted to the server
+      $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+      // and submit
+      $form.get(0).submit();
+    }
+  };
+
+  $("#addShippingAddress").click(function(){
+
+
+  })
+  {% if current_addresses %}
+  $("#ShippingAddressForm").fadeToggle();
+  {% endif %}
+
+    {% endblock %}
+</script>
+{% block content %}
+
+<!-- payment -->
+<section
+  class="payment card card-pymnt register-container"
+  id="payment-section"
+>
+  <div class="loginbox"></div>
+  <h1 class="payment-title">Credit Card Details</h1>
+
+  <span class="payment-errors"></span>
+  <div class="form-row">
+    <label>
+      <p>Card Number</p>
+      <input type="text" size="20" data-stripe="number" name="" value="" />
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <p>CVC</p>
+      <input type="text" size="4" data-stripe="cvc" name="" value="" />
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <p>Expiration (MM/YYYY)</p>
+      <input
+        style="margin-left: 15%"
+        type="number"
+        size="2"
+        data-stripe="exp-month"
+        name=""
+        value=""
+      />
+    </label>
+    <span> / </span>
+    <input type="number" size="2" data-stripe="exp-year" name="" value="" />
+  </div>
+
+  <button
+    style="margin-top: 2% !important; margin-left: 15% !important"
+    class="btn-submit btn btn-info"
+    type="submit"
+    name="button"
+  >
+    Submit Payment
+  </button>
+</section>
