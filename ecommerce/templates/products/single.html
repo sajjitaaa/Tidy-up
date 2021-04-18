@@ -1,40 +1,139 @@
 {% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static '/css/product.css' %}">
+
+
+
 {% block content %}
-<h1>{{ product.title }}</h1>
+<style media="screen">
+  body {
+    background-color: red !;
+  }
 
-{% for img in images %}
-<img src="/media/{{ img.image }}" alt="no image">
+  h5,
+  p {
+    font-family: "Ubuntu", sans-serif !important;
+    font-weight: 900 !important;
+    align-items: left !important;
+    text-align: left !important;
+  }
 
-{% endfor %}
+  .product-title {
+    text-transform: uppercase !important;
+  }
 
-<form class="form pull-right" action="{% url "add_to_cart" product.slug %}" method="POST">
-  {% csrf_token %}
-  <input type="submit" name="" value="Add to cart">
-  <input type="number" placeholder="1" name="qty" value="1">
-  <!-- <input type="text" name="attr" placeholder="size" value=""> -->
+  .upper-part {
+    align-items: left !important;
+    text-align: left !important;
+  }
+</style>
+<section class="mb-5">
+  <div class="row main-content card-main">
+    <div class="card product-img col-md-6 mb-4 mb-md-0">
 
-  {% if product.variation_set.all%}
+      <div class="mdb-lightbox">
+        <div class="col-12 mb-0">
+          <figure class="view overlay rounded z-depth-1 main-img">
+            <a href="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" data-size="710x823">
+
+              {% for img in images %}
+              <img class="img-fluid z-depth-1" src="/media/{{ img.image }}" alt="no image">
+              {% endfor %}
+            </a>
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div class="card product-details col-md-4">
+      <h5 class="product-title">{{ product.title }}</h5>
+      <p class="mb-2 text-muted text-uppercase small">
+        {{ product.description }}
+      </p>
+      <p>
+        <span class="mr-1"><strong>Rs. {{ product.price }}</strong></span>
+      </p>
+      <p class="pt-1"></p>
+      <div class="upper-part table-responsive">
+        <table class="table table-sm table-borderless mb-0">
+          <tbody>
+            <tr>
+              <th class="pl-0 w-25" scope="row"><strong>School</strong></th>
+              <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+              <th class="pl-0 w-25" scope="row"><strong>Item</strong></th>
+              <td>{{ product.title }}</td>
+            </tr>
+            <tr>
+              <th class="pl-0 w-25" scope="row">
+                <strong>Country</strong>
+              </th>
+              <td>India</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <hr />
 
 
-  {% if product.variation_set.sizes %}
-  <select name="size" >
-    {% for item in product.variation_set.sizes %}
-    <option value='{{ item.title|lower }}'>{{ item.title|capfirst }}</option>
-    {% endfor %}
-  </select>
-  {% endif %}
+      <div class="table-responsive mb-2">
+        <table class="table table-sm table-borderless">
+          <tbody>
+            <tr>
+              <td class="pl-0 pb-0 w-25">Quantity</td>
+              <td class="pb-0" align='center'>Select size</td>
+            </tr>
+            <tr>
+              <td class="pl-0">
+
+                <form action="{% url "add_to_cart" product.slug %}" method="POST">
+                  {% csrf_token %}
+
+                  <!-- <li style="color:#eee"> -->
+                  <input type="number" placeholder="1" name="qty" value="1">
+                  <!-- </li> -->
+                  <!-- <li style="color:#eee"> -->
+                  <br><br>
+                  <a type="button" class="btn btn-info btn-md mr-1 mb-2">
+                    <input class="btn btn-info btn-md mr-1 mb-2" type="submit" name="" value="Add to cart">
+                    <i class="fas fa-shopping-cart pr-2"></i>
+                  </a>
+                  <br><br>
+                  <!-- </li> -->
+
+                </form>
+
+              </td>
+              <td>
+                <div class="mt-1">
+                  <div class="form-check form-check-inline pl-0">
+                    <input type="radio" class="form-check-input" id="small" name="materialExampleRadios" checked />
+                    <label class="form-check-label small text-uppercase card-link-secondary" for="small">Small</label>
+                  </div>
+                  <div class="form-check form-check-inline pl-0">
+                    <input type="radio" class="form-check-input" id="medium" name="materialExampleRadios" />
+                    <label class="form-check-label small text-uppercase card-link-secondary" for="medium">Medium</label>
+                  </div>
+                  <div class="form-check form-check-inline pl-0">
+                    <input type="radio" class="form-check-input" id="large" name="materialExampleRadios" />
+                    <label class="form-check-label small text-uppercase card-link-secondary" for="large">Large</label>
+                  </div>
+                </div>
+                <br>
+                <a type="button" class="btn btn-success btn-md mr-1 mb-2">
+                  <input class="btn btn-success btn-md mr-1 mb-2" type="submit" name="" value="Buy Now">
+                </a>
 
 
-  <!-- {% if product.variation_set.colors %}
-  <select name="size" >
-    {% for item in product.variation_set.colors %}
-    <option value='{{ item.title|lower }}'>{{ item.title|capfirst }}</option>
-    {% endfor %}
-  </select>
-  {% endif %} -->
+              </td>
 
+            </tr>
+          </tbody>
 
-  {% endif %}
+        </table>
+      </div>
 
-</form>
+    </div>
+  </div>
+</section>
 {% endblock %}
