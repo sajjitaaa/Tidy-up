@@ -1,0 +1,188 @@
+<!-- {% extends "base.html" %} -->
+
+<style>
+  body {
+    font-family: "Montserrat", sans-serif;
+    text-align: left;
+    align-items: left;
+    margin: 8%;
+    margin-top: 5%;
+    background-color: #cae8d5 !important;
+  }
+  h1,
+  h2 {
+    font-weight: 900;
+  }
+  .card {
+    margin: 3% !important;
+  }
+  .payment-title {
+    text-align: center;
+  }
+  .card-pymnt {
+    margin-top: 4% !important;
+    padding: 4% !important;
+    padding-top: 2% !important;
+    background-color: #427e92;
+    color: #cae8d5;
+  }
+</style>
+
+<script>
+    {% block jquery %}
+
+       Stripe.setPublishableKey('{{ stripe_pub }}');
+
+       jQuery(function($) {
+    $('#payment-form').submit(function(event) {
+      var $form = $(this);
+
+        //Disable the submit button to prevent repeated clicks
+      $form.find('button').prop('disabled', true);
+
+      Stripe.card.createToken($form, stripeResponseHandler);
+
+      // Prevent the form from submitting with the default action
+      return false;
+    });
+  });
+
+
+  function stripeResponseHandler(status, response) {
+    var $form = $('#payment-form');
+
+    if (response.error) {
+      // Show the errors on the form
+      $("#card_errors_div").removeClass("hidden");
+      $form.find('.payment-errors').text(response.error.message);
+      $form.find('button').prop('disabled', false);
+    } else {
+      $("#card_errors_div").addClass("hidden");
+      // response contains id and card, which contains additional card details
+      var token = response.id;
+      // Insert the token into the form so it gets submitted to the server
+      $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+      // and submit
+      $form.get(0).submit();
+    }
+  };
+
+  $("#addShippingAddress").click(function(){
+
+
+  })
+  {% if current_addresses %}
+  $("#ShippingAddressForm").fadeToggle();
+  {% endif %}
+
+    {% endblock %}
+</script>
+{% block content %} {% if address_form %}
+<hr />
+<br />
+<div class="card" id="ShippingAddressForm">
+  <h1>Add new shipping address:</h1>
+  <form
+    class=""
+    style="display: none"
+    action='{% url "ajax_add_user_adddress" %}?next=checkout'
+    method="POST"
+  >
+    {% csrf_token %} {{ address_form.as_p }}
+    <input
+      class="btn btn-info"
+      type="submit"
+      name=""
+      value="Add shipping Address"
+    />
+  </form>
+</div>
+
+{% endif %}
+
+<form class="card" action="" method="POST" id="payment-form">
+  {% csrf_token %} {% if current_addresses %}
+
+  <!-- Shipping Adresses -->
+  <h1>Shipping addresses are:</h1>
+
+  {% for address in current_addresses %} {% if
+  request.user.userdefaultaddress.shipping_id == address.id %}
+  <input
+    type="radio"
+    name="shipping_address"
+    value="{{ address.id }}"
+    checked="checked"
+  />{{ address.get_address }}<br />
+  {% else %}
+  <input type="radio" name="shipping_address" value="{{ address.id }}" />{{
+  address.get_address }}<br />
+  {% endif %} {% endfor %}
+
+  <!-- add new address -->
+  <a href='{% url "add_user_address" %}' id="addShippingAddress"
+    >Add new Address</a
+  >
+  {% endif %} {% if billing_addresses %}
+
+  <!-- billing adresses -->
+  <h1>Billing addresses are:</h1>
+
+  {% for address in billing_addresses %} {% if
+  request.user.userdefaultaddress.billing_id == address.id %}
+  <input
+    type="radio"
+    name="billing_address"
+    value="{{ address.id }}"
+    checked="checked"
+  />{{ address.get_address }}<br />
+  {% else %}
+  <input type="radio" name="billing_address" value="{{ address.id }}" />{{
+  address.get_address }}<br />
+  {% endif %} {% endfor %} {% endif %}
+</form>
+<h2>Current Total : {{ order.get_final_amount }}</h2>
+<br />
+<a class="btn btn-dark" href="payment.html" type="button">
+  <button class="btn btn-dark">Go to payment</button></a
+>
+<br />
+<br /><br />
+<hr />
+{% endblock %}
+
+<!-- <form class="" action="" method="POST" id="payment-form">
+  {% csrf_token %} {% if current_addresses %}
+
+  <table style="width: 90%">
+    <tr>
+      <th>Shipping addresses are:</th>
+      <th>Billing addresses are:</th>
+    </tr>
+    <tr class="row">
+      {% for address in current_addresses %} {% if
+      request.user.userdefaultaddress.shipping_id == address.id %}
+      <td class="col-sm-3 card">
+        <input
+          type="radio"
+          name="shipping_address"
+          value="{{ address.id }}"
+          checked="checked"
+        />
+      </td>
+      {{ address.get_address }}<br />
+      {% else %}
+      <td class="col-sm-3 card">
+        <input type="radio" name="shipping_address" value="{{ address.id }}" />
+      </td>
+      {{ address.get_address }}<br />
+      {% endif %} {% endfor %}
+      <td class="col-sm-3 card">
+        <a href='{% url "add_user_address" %}' id="addShippingAddress"
+          >Add new Address</a
+        >
+        {% endif %}
+      </td>
+    </tr>
+  </table>
+</form> -->
