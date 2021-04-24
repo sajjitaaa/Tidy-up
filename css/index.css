@@ -82,7 +82,7 @@ p {
   padding: 0 18px;
 }
 .nav-link {
-  color: #cae8d5 !important;
+  color: #e1f3e8 !important;
   font-size: 1.2rem !important;
   font-weight: 500 !important;
   margin: 0 5px !important;
@@ -90,6 +90,20 @@ p {
 .nav-link:hover {
   color: #84a9ac !important;
   font-size: 1.21rem !important;
+}
+.nav-item .dropdown-menu {
+  background-color: #427e92;
+  border-radius: 1%;
+  font-size: 0.9rem;
+}
+.dropdown-menu .dropdown-item {
+  color: #e1f3e8 !important;
+}
+.dropdown-menu .dropdown-item:hover {
+  color: #204051 !important;
+}
+.dropdown-menu hr {
+  background-color: #e1f3e8 !important;
 }
 .navbar-nav {
   margin-left: 6% !important;
@@ -347,7 +361,7 @@ p {
 }
 .testimonial-text {
   font-family: "Ubuntu", sans-serif !important;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .testimonial-img {

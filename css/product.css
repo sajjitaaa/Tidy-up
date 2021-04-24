@@ -97,6 +97,122 @@ p {
   display: flex;
   justify-content: space-evenly;
 }
+/* moving headings */
+.loading {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 20vw;
+  text-align: center;
+  line-height: 60px;
+  font-size: 1.7rem;
+  position: relative;
+  left: 5vw;
+  right: 0;
+  top: 2vh;
+  margin-top: 1vh;
+  margin-bottom: 4vh;
+  transform: translateY(-50%);
+}
+
+.loading span {
+  position: relative;
+  z-index: 999;
+  color: rgb(12, 12, 12);
+}
+
+.loading:before {
+  content: "";
+  background: #b3def1;
+  width: 190px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  animation: 2s loadingBefore infinite ease-in-out;
+}
+
+@keyframes loadingBefore {
+  0% {
+    transform: translateX(-14px);
+  }
+
+  50% {
+    transform: translateX(14px);
+  }
+
+  100% {
+    transform: translateX(-14px);
+  }
+}
+
+.loading:after {
+  content: "";
+  background: #ffda36;
+  width: 14px;
+  height: 65px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0.9;
+  animation: 2s loadingAfter infinite ease-in-out;
+}
+
+@keyframes loadingAfter {
+  0% {
+    transform: translateX(-70px);
+  }
+
+  50% {
+    transform: translateX(70px);
+  }
+
+  100% {
+    transform: translateX(-70px);
+  }
+}
+/* Reviews */
+.carousel {
+  margin: 2% 0%;
+  padding-right: 5% !important;
+  padding-left: 5% !important;
+  overflow: hidden;
+  width: 100% !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.carousel-inner {
+  position: relative;
+  width: 100% !important;
+  overflow: hidden;
+}
+.colored-section {
+  background-color: #204051 !important;
+  color: #cae8d5;
+}
+
+#reviews {
+  padding: 3%;
+}
+.testimonial-text {
+  font-family: "Ubuntu", sans-serif !important;
+  font-size: 2rem;
+}
+
+.testimonial-img {
+  margin-top: 3% !important;
+  border-radius: 100%;
+  width: 8%;
+  margin: 10px !important;
+}
 /* Footer section */
 
 .footer-section {
