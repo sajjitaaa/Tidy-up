@@ -213,6 +213,31 @@ p {
   width: 8%;
   margin: 10px !important;
 }
+.review-box {
+  background-color: #427e92;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 2%;
+}
+.review-box .label {
+  color: #e1f3e8 !important;
+
+  font-family: "Ubuntu", sans-serif !important;
+  font-size: 1.5rem;
+}
+.review-box #review {
+  padding: 1%;
+  text-align: center !important;
+  color: #929292;
+  height: 4vw !important;
+  width: 30vw;
+  box-shadow: #204051 2px 4px 3px;
+}
+.review-box #review:hover {
+  height: 4.2vw !important;
+  width: 30.2vw;
+  box-shadow: #204051 3px 5px 4px;
+}
 /* Footer section */
 
 .footer-section {
