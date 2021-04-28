@@ -129,7 +129,7 @@ p {
 .sidebar {
   font-family: Arial;
   position: relative;
-  height: 100vh !important;
+  height: 120vh !important;
   background: #427e92;
   font-size: 1.4rem !important;
 }
@@ -138,7 +138,7 @@ p {
   position: relative;
   margin: 0 8% !important;
   text-align: right !important;
-  top: 50% !important;
+  top: 45% !important;
   transform: translateY(-50%) !important;
   font-weight: 500 !important;
 }
