@@ -14,16 +14,22 @@ h4 {
   font-weight: 900;
 }
 h3,
-h5,
 h6 {
+  font-family: "Montserrat-Black", sans-serif !important;
+
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+h5 {
   font-family: "Ubuntu", sans-serif !important;
-  font-size: 2rem;
+
+  font-size: 1.3rem !important;
+  text-transform: uppercase;
   font-weight: 1000 !important;
 }
-
 p {
   font-family: "Montserrat-Black", sans-serif !important;
-  color: #494949;
+  color: #313131;
 }
 
 /* navbar */
@@ -77,7 +83,7 @@ p {
 }
 .main-content .card {
   padding: 2% !important;
-  background-color: #cae8d5 !important;
+  background-color: #e0f3e7 !important;
 }
 .card-sidebar {
   margin: 0% 4% 5% 1%;
@@ -179,6 +185,49 @@ p {
     transform: translateX(-70px);
   }
 }
+/* rating  */
+.rate {
+  float: left !important;
+  height: 46px;
+  /* padding: 0 50px; */
+}
+.rate:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+}
+.rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: rgb(185, 184, 184);
+}
+.rate:not(:checked) > label:before {
+  content: "★ ";
+  /* content: "\2606"; */
+}
+
+.rate > input:checked ~ label {
+  content: "★ " !important;
+  color: #f7ca28;
+  /* color: #204051; */
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  /* color: #deb217; */
+  color: #ffc700;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  /* color: #c59b08; */
+  color: #e0b310;
+}
+
 /* Reviews */
 .carousel {
   margin: 2% 0%;
