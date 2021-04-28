@@ -101,17 +101,57 @@
                 Search
               </button>
             </form>
-            <div class="btn-accounts">
+            <!-- if logged in -->
+            <div class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="user-details.html"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                data-bs-toggle="dropdown"
+              >
+                Hello, user
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="user-details.html">Profile </a>
+                </li>
+                <hr />
+                <li>
+                  <a class="dropdown-item" href="orders.html">Your orders</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="all-address.html"
+                    >Saved Addresses
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a class="dropdown-item" href="user-details.html"
+                    >Edit details
+                  </a>
+                </li>
+                <li><a class="dropdown-item" href="#">Contact Us </a></li>
+                <li><a class="dropdown-item" href="#">Logout </a></li>
+              </ul>
+            </div>
+            <a class="btn btn-info" href="login.html">Logout</a>
+            <a class="btn btn-nav btn-outline-light" href="{% url 'cart' %}">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+            <!-- if not logged in -->
+            <!-- <div class="btn-accounts">
               <a class="btn btn-nav btn-info" href="login.html">Login</a>
-              <!-- <a class="btn btn-nav btn-info" href="#">Logout</a> -->
-
               <a class="btn btn-nav btn-outline-info" href="sign-up.html"
                 >Sign up</a
               >
               <a class="btn btn-nav btn-outline-light" href="{% url 'cart' %}">
                 <i class="fas fa-shopping-cart"></i>
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
       </nav>
