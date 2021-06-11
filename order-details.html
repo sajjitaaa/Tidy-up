@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
+    <title>Addressbook</title>
     <link rel="stylesheet" href="css/user-profile.css" />
 
     <!-- css style sheet -->
@@ -162,59 +162,77 @@
         <aside class="sidebar">
           <nav class="nav">
             <ul>
-              <li class="active">
+              <li>
                 <a href="user-details.html">Personal details</a>
               </li>
-              <li><a href="orders.html">Your Orders</a></li>
-              <li><a href="all-address.html">Saved Addresses</a></li>
+              <li class="active"><a href="orders.html">Your Orders</a></li>
+              <li>
+                <a href="all-address.html">Saved Addresses</a>
+              </li>
               <li><a href="#">Logout</a></li>
             </ul>
           </nav>
         </aside>
       </main>
+
       <!-- main content -->
       <section class="col-sm-9">
+        <a
+          style="margin-top: 2vw; margin-left: 0px"
+          type="button"
+          href="orders.html"
+          class="btn btn-dark"
+          >&laquo; Go back to all orders.</a
+        >
         <div class="card card-user">
-          <h1 class="title-user">Personal details</h1>
+          <h1 class="title-user">Your Orders</h1>
           <hr />
           <div class="table-responsive">
             <table class="table table-sm table-borderless mb-0">
               <tbody>
                 <tr>
-                  <th class="field" scope="row">Name</th>
-                  <td>full Name</td>
+                  <th class="field" scope="row">Order ID</th>
+                  <td>order id</td>
                 </tr>
                 <tr>
-                  <th class="field" scope="row">E-mail</th>
-                  <td>email</td>
+                  <th class="field" scope="row">Date of order</th>
+                  <td>timestamp</td>
                 </tr>
                 <tr>
                   <th class="field" scope="row">Mobile No.</th>
                   <td>number</td>
                 </tr>
                 <tr>
-                  <th class="field" scope="row">Gender</th>
+                  <th class="field" scope="row">Shipping Address</th>
                   <td>-not set-</td>
                 </tr>
                 <tr>
-                  <th class="field" scope="row">Date of Birth</th>
+                  <th class="field" scope="row">Billing Address</th>
                   <td>-not set-</td>
                 </tr>
                 <tr>
-                  <th class="field" scope="row">Alternate mobile</th>
+                  <th class="field" scope="row">Order Status</th>
                   <td>-not set-</td>
                 </tr>
                 <tr>
-                  <th class="field" scope="row">Location</th>
+                  <th class="field" scope="row">Sub Total</th>
                   <td>-not set-</td>
                 </tr>
                 <tr>
+                  <th class="field" scope="row">Tax Total</th>
+                  <td>-not set-</td>
+                </tr>
+                <tr>
+                  <th class="field" scope="row">Final Total</th>
+                  <td>-not set-</td>
+                </tr>
+                <!-- <tr>
                   <td>
                     <a class="btn btn-danger" type="button" href=""
                       >Edit Details</a
                     >
                   </td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </div>
@@ -223,7 +241,6 @@
     </div>
 
     <!-- footer -->
-
     <footer
       style="background-color: rgb(206, 236, 241)"
       class="page-footer font-small elegant-color"

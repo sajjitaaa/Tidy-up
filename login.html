@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css" />
+    <!-- <script src="login.js"></script> -->
 
     <!-- css style sheet -->
 
@@ -101,39 +102,161 @@
                 Search
               </button>
             </form>
-            <div class="btn-accounts">
+            <!-- if logged in -->
+            <div class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="user-details.html"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                data-bs-toggle="dropdown"
+              >
+                Hello, user
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="user-details.html">Profile </a>
+                </li>
+                <hr />
+                <li>
+                  <a class="dropdown-item" href="orders.html">Your orders</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="all-address.html"
+                    >Saved Addresses
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a class="dropdown-item" href="user-details.html"
+                    >Edit details
+                  </a>
+                </li>
+                <li><a class="dropdown-item" href="#">Contact Us </a></li>
+                <li><a class="dropdown-item" href="#">Logout </a></li>
+              </ul>
+            </div>
+            <a class="btn btn-info" href="login.html">Logout</a>
+            <a class="btn btn-nav btn-outline-light" href="{% url 'cart' %}">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+            <!-- if not logged in -->
+            <!-- <div class="btn-accounts">
               <a class="btn btn-nav btn-info" href="login.html">Login</a>
-              <!-- <a class="btn btn-nav btn-info" href="#">Logout</a> -->
-
               <a class="btn btn-nav btn-outline-info" href="sign-up.html"
                 >Sign up</a
               >
               <a class="btn btn-nav btn-outline-light" href="{% url 'cart' %}">
                 <i class="fas fa-shopping-cart"></i>
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
       </nav>
     </section>
 
-    <!-- Login form -->
-    <section class="container-fluid">
-      <div class="card register-container">
-        <div class="card loginbox">
-          <h1 class="login-font">Login here</h1>
-          <form>
-            <p>Username</p>
-            <input type="username" name="" placeholder="username" />
-            <p>Password</p>
-            <input type="password" name="" placeholder="password" /><br />
-            <input type="submit" name="" placeholder="Submit" /><br />
-
-            <br /><br />
-          </form>
-        </div>
+    <div class="form-modal">
+      <div class="form-toggle">
+        <button id="login-toggle" onclick="toggleLogin()">log in</button>
+        <button id="signup-toggle" onclick="toggleSignup()">sign up</button>
       </div>
-    </section>
+
+      <div id="login-form" class="inner-form">
+        <form>
+          <label for="email">Enter email/username : </label>
+          <input
+            id="email"
+            name="email"
+            type="text"
+            placeholder="Enter email or username"
+          />
+          <label for="password">Enter password : </label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Enter password"
+          />
+          <p>
+            Don't have an account?
+            <a href="#" onclick="toggleSignup()">Sign Up here!</a>
+          </p>
+          <button type="button" class="btn login">login</button>
+          <p><a href="javascript:void(0)">Forgot password?</a></p>
+          <hr />
+        </form>
+      </div>
+
+      <div id="signup-form" class="inner-form">
+        <form class="form-main">
+          <p>
+            Already have an account?
+            <a href="#" onclick="toggleLogin()">Login here!</a>
+          </p>
+          <label for="fname">Enter first name :</label>
+          <input
+            id="fname"
+            name="fname"
+            type="text"
+            name=""
+            placeholder="Enter first name"
+          />
+          <label for="lname">Enter last name :</label>
+          <input
+            id="lname"
+            name="lname"
+            type="text"
+            name=""
+            placeholder="Enter last name"
+          />
+          <label for="email">Enter email/username :</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Enter your email "
+          />
+
+          <label for="password">Create password :</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Create password"
+          />
+          <label for="confirm-password">Confirm password : </label>
+          <input
+            id="confirm-password"
+            name="confirm-password"
+            type="password"
+            name=""
+            placeholder="Confirm password"
+          />
+
+          <button type="submit" class="btn signup">create account</button>
+          <p>
+            Clicking create account means that you are agree to our
+            <a href="javascript:void(0)">terms of services</a>.
+          </p>
+          <hr />
+          <!-- <button type="button" class="btn -box-sd-effect">
+            <i class="fa fa-google fa-lg" aria-hidden="true"></i> sign up with
+            google
+          </button>
+          <button type="button" class="btn -box-sd-effect">
+            <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i> sign up with
+            linkedin
+          </button>
+          <button type="button" class="btn -box-sd-effect">
+            <i class="fa fa-windows fa-lg" aria-hidden="true"></i> sign up with
+            microsoft
+          </button> -->
+        </form>
+      </div>
+    </div>
   </body>
   <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -147,3 +270,22 @@
     crossorigin="anonymous"
   ></script>
 </html>
+<script>
+  function toggleSignup() {
+    document.getElementById("login-toggle").style.backgroundColor = "#fff";
+    document.getElementById("login-toggle").style.color = "#222";
+    document.getElementById("signup-toggle").style.backgroundColor = "#78aec0";
+    document.getElementById("signup-toggle").style.color = "#fff";
+    document.getElementById("login-form").style.display = "none";
+    document.getElementById("signup-form").style.display = "block";
+  }
+
+  function toggleLogin() {
+    document.getElementById("login-toggle").style.backgroundColor = "#78aec0";
+    document.getElementById("login-toggle").style.color = "#fff";
+    document.getElementById("signup-toggle").style.backgroundColor = "#fff";
+    document.getElementById("signup-toggle").style.color = "#222";
+    document.getElementById("signup-form").style.display = "none";
+    document.getElementById("login-form").style.display = "block";
+  }
+</script>
