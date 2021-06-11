@@ -4,8 +4,6 @@ from django.conf import settings
 from django.template.loader import render_to_string
 from django.urls import reverse
 
-
-
 from localflavor.in_.in_states import STATE_CHOICES
 # Create your models here.
 
@@ -62,6 +60,7 @@ class UserAddress(models.Model):
     phone = models.CharField(max_length=120)
     shipping = models.BooleanField(default=True)
     billing = models.BooleanField(default=True)
+
 
     def __str__(self):
         return self.get_address()

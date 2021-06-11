@@ -114,15 +114,20 @@
                    >All products</a
                  >
                </li>
-               <li><a class="dropdown-item" href="#">Girls Summer</a></li>
+               {% for category in categories %}
+               <li>
+                 <a class="dropdown-item" href="/?category={{ category.id }}">{{ category.title }}</a>
+               </li>
+               {% endfor %}
+               <!-- <li><a class="dropdown-item" href="#">Girls Summer</a></li>
                <li><a class="dropdown-item" href="#">Girls Winter</a></li>
                <li><a class="dropdown-item" href="#">Boys Summer</a></li>
                <li><a class="dropdown-item" href="#">Boys Winter</a></li>
-               <li><a class="dropdown-item" href="#">Kids</a></li>
+               <li><a class="dropdown-item" href="#">Kids</a></li> -->
              </ul>
            </li>
          </ul>
-         <form class="nav-search d-flex" role="search" action="/s/">
+         <form class="nav-search d-flex" role="search" >
            <input
              class="form-control me-2"
              type="search"

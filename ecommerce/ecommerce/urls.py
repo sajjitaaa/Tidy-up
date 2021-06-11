@@ -40,6 +40,17 @@ urlpatterns = [
     url(r'^accounts/activate/(?P<activation_key>\w+)/$', accountviews.activation_view, name="activation_view"),
     url(r'^ajax/add_user_address/$', accountviews.add_user_address, name="ajax_add_user_adddress"),
     url(r'^accounts/address/add/$', accountviews.add_user_address, name="add_user_address"),
+    url(r'^checkout/payment/$', orderviews.payment_view, name='payment',),
+    url(r'^schools/$', views.allSchools, name='allschools'),
+    url(r'^product/shirts-view-all/$', views.view_all_shirt, name='p7-products'),
+    url(r'^products/skirt-view-all/$', views.view_all_skirt, name='skirt-product'),
+    url(r'^products/belt-view-all/$', views.view_all_belt, name='belt-product'),
+    url(r'^products/socks-view-all/$', views.view_all_socks, name='sock-product'),
+    url(r'^products/trousers-view-all/$', views.view_all_trousers, name='trousers-product'),
+    # url(r'^category/(?P<category_id>\d+)/$', views.get_product_by_category, name='product-by-category',),
+    # url(r'^products/category/(?P<slug>[\w-]+)/$', views.get_product_by_category, name="product-by-category"),
+    # url(r'^(?P<category_slug>[-\w]+)/$', views.marketplaceHome, name='products_by_category'),
+
     # url('<slug:slug>/', views.category_detail, name='category_detail'),
 ]
 

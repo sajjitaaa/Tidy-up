@@ -1,0 +1,274 @@
+<!-- 
+{% for school in schools %}
+{% for product in products %}
+{{ product.title }}
+{{ product.price }}
+{% endfor %}
+{% endfor %}
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uniforms</title>
+    <!-- <link rel="stylesheet" href="css/product.css" /> -->
+
+    <!-- css style sheet -->
+		{% load static %}
+    {% load widget_tweaks %}
+		<link rel="stylesheet" href="{% static 'css/product.css' %}">
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <!-- font awesome link -->
+    <script
+      src="https://kit.fontawesome.com/e58d4fb0ce.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <!-- various links for bootstrap -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- google fonts link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section class="title-navbar">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'home' %}">Tidy Up</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="{% url 'home' %}"
+                  >Home</a
+                >
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Categories
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="{% url 'allproducts' %}"
+                      >All products</a
+                    >
+                  </li>
+                  <li><a class="dropdown-item" href="#">Girls </a></li>
+                  <li><a class="dropdown-item" href="#">Boys </a></li>
+                  <li><a class="dropdown-item" href="#">Accessories</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="nav-search d-flex" role="search" action="/s/">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search by School"
+                aria-label="Search"
+                name="q"
+              />
+              <button class="btn btn-search btn-outline-light" type="submit">
+                Search
+              </button>
+            </form>
+            <div class="btn-accounts">
+              {% if user.is_authenticated %}
+              <a class="btn btn-nav btn-info" href="{% url 'auth_logout' %}"
+                >Logout</a
+              >
+              {% else %}
+              <a class="btn btn-nav btn-info" href="{% url 'auth_login' %}"
+                >Login</a
+              >
+              <a
+                class="btn btn-nav btn-outline-info"
+                href="{% url 'auth_register' %}"
+                >Sign up</a
+              >
+              {% endif %}
+
+              <a class="btn btn-nav btn-outline-light" href="{% url 'cart' %}">
+                <i class="fas fa-shopping-cart"
+                  >(({{request.session.items_total}}))</i
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+
+
+        <!-- products -->
+        <div class="col-md-8 products">
+          <section>
+            <!-- Grid row -->
+            <div class="row">
+              <!-- Grid column -->
+              {% for school in schools %}
+               {% for product in products %}
+              <div class="col-md-4 mb-4">
+                <div class="card">
+                  <div class="view zoom overlay z-depth-2 rounded">
+                    <a href="#!">
+                      <div class="mask">
+                        {% for item in product.productimage_set.all %}
+                        <img
+                          class="product-img-grid img-fluid w-100"
+                          src="{{ MEDIA_URL }}/media/{{ item.image }}"
+                          alt="not"
+                        />
+                        {% endfor %}
+                        <div class="mask rgba-black-slight"></div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="text-center pt-4">
+                    <h5>{{ product.title }} </h5>
+                    <p class="mb-2 text-muted text-uppercase small">
+                      {{ product.description }}
+                    </p>
+
+                    <hr />
+                    <h6 class="mb-3">Rs. {{ product.price }}</h6>
+                    <h6 class="mb-3">{{ school.name }}</h6>
+
+                    <a
+                      type="button"
+                      class="btn btn-info btn-sm mr-1 mb-2"
+                      href="{% url "add_to_cart" product.slug %}"
+                      ><i class="fas fa-shopping-cart pr-2"></i> Add to cart
+                    </a>
+                    <a
+                      href="{{ product.get_absolute_url }}"
+                      type="button"
+                      class="btn btn-outline-dark btn-sm mr-1 mb-2"
+                    >
+                      <i class="fas fa-info-circle pr-2"></i>Details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              {% endfor %}
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+
+    <footer class="block-area footer-section container-fluid">
+      <div class="main-content">
+        <div class="left box">
+          <h2>About Us</h2>
+          <div class="content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              necessitatibus! Provident, placeat et nesciunt nobis dolorum
+              tempora laudantium repudiandae necessitatibus beatae, suscipit
+              optio doloribus obcaecati doloremque, iure laboriosam amet
+              voluptatibus?
+            </p>
+            <div class="social">
+              <a class="icon-footer" href="#"
+                ><span class="fab fa-facebook-f"></span
+              ></a>
+              <a class="icon-footer" href="#"
+                ><span class="fab fa-twitter"></span
+              ></a>
+              <a class="icon-footer" href="#"
+                ><span class="fab fa-instagram"></span
+              ></a>
+              <a class="icon-footer" href="#"
+                ><span class="fab fa-linkedin"></span
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="center box">
+          <h2>Address</h2>
+          <div class="content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="text"
+                >9301 Roberts Street Duvernay-Est, QC H7A 2M7</span
+              >
+            </div>
+
+            <div class="phone">
+              <span class="fas fa-phone"></span>
+              <span class="text">425-785-5798</span>
+            </div>
+
+            <div class="email">
+              <span class="fas fa-envelope"></span>
+              <span class="text">XYZABC@email.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"
+  ></script>
+</html>
