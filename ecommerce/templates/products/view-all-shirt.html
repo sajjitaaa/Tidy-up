@@ -1,3 +1,12 @@
+<!-- 
+{% for school in schools %}
+{% for product in products %}
+{{ product.title }}
+{{ product.price }}
+{% endfor %}
+{% endfor %}
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -134,188 +143,9 @@
         </div>
       </nav>
     </section>
-    <!-- sidebar and products  -->
-    <section class="container-fluid main-content">
-      <div class="row">
-        <!-- sidebar -->
-        <div class="card-sidebar card col-md-3">
-          <!-- search -->
-          <div class="row searchbar">
-            <section class="mb-4">
-              <div
-                class="md-form md-outline mt-0 d-flex justify-content-between align-items-center"
-              >
-                <input
-                  type="text"
-                  id="search12"
-                  class="form-control mb-0"
-                  placeholder="Search by School"
-                />
-                <a href="#!" class="btn btn-flat btn-md px-3 waves-effect"
-                  ><i class="fas fa-search fa-lg"></i
-                ></a>
-              </div>
-            </section>
-          </div>
-          <hr />
-          <!-- filters -->
-          {% comment %} <div class="Filters">
-            <section class="mb-4">
-              <h6 class="mb-3">Items</h6>
-
-              <div class="form-check pl-0 mb-3">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="new"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="new"
-                  >Shirt</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="used"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="used"
-                  >Trousers</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="collectible"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="collectible"
-                  >Skirt</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3 pb-1">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="renewed"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="renewed"
-                  >Tie</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3 pb-1">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="renewed"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="renewed"
-                  >Belt</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3 pb-1">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="renewed"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="renewed"
-                  >Shoes</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3 pb-1">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="renewed"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="renewed"
-                  >Accessories</label
-                >
-              </div>
-              <hr />
-              <h6 class="mb-3">Seasonal</h6>
-
-              <div class="form-check pl-0 mb-3">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="new"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="new"
-                  >Summer</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="used"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="used"
-                  >Winter</label
-                >
-              </div>
-            </section>
-          </div> {% endcomment %}
-
-          <p>Sort By: </p>
-
-          <a href="{% url 'allproducts' %}?orderby=price">price</a>
-          <form  method='get'>
-            {{ myfilter.form }}
-            {{ myfilter2.form }}
-
-            {% comment %} <select value='{{ myfilter.form }}' name="item_id">
-              {% for product in products %}
-                <option value='{{ product.title }}'>{{ product.title }}</option>
-              {% endfor %}
-            </select> {% endcomment %}
-      <button type="submit" name="button">Submit</button>
-            {% comment %} <ul>
-
-              <input type="radio" name="query" value="p1">p1
-              <input type="radio" name="query" value="trousers">Trousers
-              <input type="radio" name="query" value="skirt">Skirt
-              <input type="radio" name="query" value="Belt">Belt
-              <input type="submit"  value="search">
-            </ul> {% endcomment %}
-          </form>
-
-
-          {% comment %} <form method="GET" action="">
-            <label>Schools</label>
-            <div class="dropdown bootstrap-select hero__form-input form-control custom-select">
-              {% for school in schools %}
-                {% render_field listing.form.title %}
-              {% endfor %}
-            </div
-
-          </form> {% endcomment %}
-
-          <!-- SORTING DATA -->
 
 
 
-        </div>
         <!-- products -->
         <div class="col-md-8 products">
           <section>
@@ -344,7 +174,7 @@
                   <div class="text-center pt-4">
                     <h5>{{ product.title }} </h5>
                     <p class="mb-2 text-muted text-uppercase small">
-                      {{ product.description|truncatewords:"10"}}
+                      {{ product.description }}
                     </p>
 
                     <hr />

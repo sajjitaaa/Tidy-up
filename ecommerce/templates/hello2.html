@@ -1,8 +1,7 @@
-
 {% extends "base.html" %}
 
 <script>
-{%  block jquery %}
+{% block jquery %}
 
 $(".radio-label").click(function(){
   $("label").removeClass('radio-label-selected');
@@ -143,19 +142,18 @@ $("#addShippingAddress").click(function(e){
 
 {% block content %}
 
-<!-- <div class='col-sm-3 pull-right'>
+<div class='col-sm-3 pull-right'>
 <div class='total'>
 <h1>Current total: {{ order.get_final_amount }}</h1>
 <a href='#'>Finalize Checkout</a>
 </div>
-</div> -->
+</div>
 
 <div class='col-sm-9 pull-left'>
 
-        <!-- Add new Shipping addres -->
         <div class='col-sm-6 pull-right' id='shippingAddressForm' style='display:none;'>
         <h3>Add new Shipping Address</h3>
-        <form method="POST" action='{% url "add_user_address" %}?next=checkout'>{% csrf_token %}
+        <form method="POST" action='{% url "ajax_add_user_address" %}?next=checkout'>{% csrf_token %}
         {{ address_form.as_p }}
 
         <input type='submit' class='btn btn-default' value='Add Shipping Address'/>
@@ -165,9 +163,8 @@ $("#addShippingAddress").click(function(e){
 
 
 
-        <!-- current addresses -->
-        <form method='POST' action="" id="payment-form">
-           {% csrf_token %}
+
+        <form method='POST' action="" id="payment-form"> {% csrf_token %}
         {% if current_addresses  %}
         <div class='col-sm-12'>
         <h3>Shipping Addresses</h3>
@@ -194,7 +191,7 @@ $("#addShippingAddress").click(function(e){
 
 
 
-          <!-- Billing address -->
+
         {% if billing_addresses  %}
         <div class='col-sm-12'>
         <h3>Billing Addresses</h3>

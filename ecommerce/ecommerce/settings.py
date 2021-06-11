@@ -24,9 +24,13 @@ SECRET_KEY = '^s=mp8t1-z)rj#b9rk+4him(0i#0g*@^kc@tkdze78kni$+zxx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'youremail@gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_PASSWORD = 'yourpasswor'
 
 ALLOWED_HOSTS = []
-
 DEFAULT_FROM_EMAIL = "yuktibajaj85@yahoo.com"
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_EMAIL_VERIFICATION = "none"
@@ -59,6 +63,11 @@ INSTALLED_APPS = [
     'orders',
     'accounts.apps.AccountsConfig',
     'localflavor',
+    'django_filters',
+    'widget_tweaks',
+
+
+
 ]
 
 MIDDLEWARE = [

@@ -17,6 +17,7 @@ class School(models.Model):
 	phone = models.CharField(max_length=120)
 	description = models.TextField(null=True, blank=True)
 	slug = models.SlugField(unique=True)
+	product = models.ManyToManyField('Product')
 
 	def __str__(self):
 		return self.name
@@ -41,6 +42,8 @@ class Product(models.Model):
 	updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 	active = models.BooleanField(default=True)
 	update_defaults = models.BooleanField(default=False)
+	available = models.BooleanField(default=True)
+
 
 	def __str__(self):
 		return self.title
@@ -60,6 +63,12 @@ class Product(models.Model):
 		else:
 			return Product.objects.all()
 
+	def get_all_products_by_productid(product_id):
+		if product_id:
+			return Product.objects.filter(product = product_id)
+		else:
+			return Product.objects.all()
+
 	# def save(self, *args, **kwargs):
     #     self.slug = slugify(self.title)
     #     super(Product,self).save(*args, **kwargs)
@@ -69,7 +78,6 @@ class Product(models.Model):
 
 
 class Category(models.Model):
-	parent = models.ForeignKey('self',blank=True, null=True, related_name='children', on_delete=models.CASCADE, default = None)
 	title = models.CharField(max_length=120)
 	description = models.TextField(null=True, blank=True)
 	slug = models.SlugField(unique=True)
@@ -78,11 +86,14 @@ class Category(models.Model):
 		return self.title
 
 	class Meta:
-		unique_together = ('slug', 'parent')
 		verbose_name_plural = "categories"
 
 	def get_absolute_url(self):
 		return '/%s/' %(self.slug)
+
+	def get_all_categories():
+		return Category.objects.all()
+
 
 
 class ProductImage(models.Model):

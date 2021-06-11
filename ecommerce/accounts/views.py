@@ -6,6 +6,9 @@ from .models import EmailConfirmed, UserDefaultAddress
 from django.contrib import messages
 from django.urls import reverse
 from accounts.forms import UserAddressForm
+from django.conf import settings
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
 # Create your views here.
 
 
@@ -38,6 +41,8 @@ def registration_view(request):
     if form.is_valid():
         new_user = form.save(commit=False)
         new_user.save()
+        # email = EmailMessage('Subject', 'Body', to=['yuktibajaj84@gmail.com'])
+        # email.send()
         messages.success(request, "succesfully registered!")
         return HttpResponseRedirect("/")
         # username = form.cleaned_data['username']
@@ -100,3 +105,34 @@ def add_user_address(request):
     btn = "Save Address"
     form_title = "Add New Address"
     return render(request, "form.html", {"form": form, "btn": btn, "form_title": form_title})
+
+
+# def thankyou(request):
+#     form = RegistrationForm(request.POST or None)
+#     if form.is_valid():
+#         new_user = form.save(commit=False)
+#         new_user.save()
+#         # subject = "Thankyou for signing up!"
+#         # message = 'Welcome to Tidy-Up.'
+#         # from_email = settings.EMAIL_HOST_USER
+#         # to_list = [new_user.email, settings.EMAIL_HOST_USER]
+#         # send_mail(subject, message, from_email, to_list, fail_silently=True)
+#
+#         email = EmailMessage(
+#             'Activate your account',
+#             'hello tesst body',
+#             settings.EMAIL_HOST_USER,
+#             ['yuktibajaj84@gmail.com'],
+#         )
+#         email.fail_silently=False
+#         email.send()
+#         messages.success(request, "succesfully registered!")
+#         return HttpResponseRedirect("/")
+#         # username = form.cleaned_data['username']
+#         # password = form.cleaned_data['password']
+#         # user = authenticate(username=username, password=password)
+#         # login(request, user)
+#
+#
+#     context = {'form': form}
+#     return render(request, 'sign-up.html', context)

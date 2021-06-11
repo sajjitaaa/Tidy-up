@@ -7,21 +7,18 @@ from django.contrib.auth.decorators import login_required
 
 
 def remove_from_cart(request, id):
+	try:
+		the_id = request.session['cart_id']
+		cart = Cart.objects.get(id=the_id)
+	except:
+		return HttpResponseRedirect(reverse("cart"))
 
-    print("hello")
-    # instance = CartItem.objects.get(id=id)
-    # instance.delete()
-    try:
-        the_id = request.session['cart_id']
-        cart = Cart.objects.get(id=the_id)
-    except:
-        return HttpResponseRedirect(reverse("cart"))
-
-    cartitem = CartItem.objects.get(id=id)
-    cartitem.delete()
-    #cartitem.cart = None
-    #cartitem.save()
-    return HttpResponseRedirect(reverse("cart"))
+	cartitem = CartItem.objects.get(id=id)
+	#cartitem.delete()
+	cartitem.cart = None
+	cartitem.save()
+	#send "success message"
+	return HttpResponseRedirect(reverse("cart"))
 
 
 def view(request):

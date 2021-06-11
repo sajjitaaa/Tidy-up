@@ -7,7 +7,7 @@ Welcome to
 <section class="colored-section" id="title-section">
 
     {% include 'carousel.html' %}
-  
+
     </section>
 
 
@@ -69,6 +69,7 @@ Welcome to
        </div>
        <!-- <h3 class="loading">Schools</h3> -->
        <div class="row">
+         {% for school in schools %}
          <div
            class="cols col-sm-3"
            ontouchstart="this.classList.toggle('hover');"
@@ -80,7 +81,7 @@ Welcome to
                alt="..."
              />
              <div style="text-align: left" class="card-body">
-               <h5 class="card-title">Ryan International School</h5>
+               <h5 class="card-title">{{school.name}}</h5>
                <hr />
                <a href="product-by-school.html" class="btn btn-primary"
                  >Show uniforms</a
@@ -88,7 +89,8 @@ Welcome to
              </div>
            </div>
          </div>
-         <div
+         {% endfor %}
+         <!-- <div
            class="cols col-sm-3"
            ontouchstart="this.classList.toggle('hover');"
          >
@@ -125,12 +127,12 @@ Welcome to
                >
              </div>
            </div>
-         </div>
+         </div> -->
        </div>
        <div class="all-school-btn">
          <a
            type="button"
-           href="#"
+           href="{% url 'allschools' %}"
            class="btn btn-dark btn-next btn-all-schools round"
            >All Schools &raquo;
          </a>
@@ -160,7 +162,7 @@ Welcome to
              <div style="text-align: left" class="card-body">
                <h5 class="card-title">Shirts</h5>
                <hr />
-               <a href="product-by-school.html" class="btn btn-primary"
+               <a href="{% url 'p7-products' %}" class="btn btn-primary"
                  >View all</a
                >
              </div>

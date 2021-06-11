@@ -47,7 +47,7 @@
     <div class="card product-details col-md-4">
       <h5 class="product-title">{{ product.title }}</h5>
       <p class="mb-2 text-muted text-uppercase small">
-        {{ product.description }}
+        {{ school.name }}
       </p>
       <p>
         <span class="mr-1"><strong>Rs. {{ product.price }}</strong></span>
@@ -57,7 +57,7 @@
         <table class="table table-sm table-borderless mb-0">
           <tbody>
             <tr>
-              <th class="pl-0 w-25" scope="row"><strong>School</strong></th>
+              <th class="pl-0 w-25" scope="row"><strong>Desciption</strong></th>
               <td>{{ product.description }}</td>
             </tr>
             <tr>
@@ -79,31 +79,11 @@
       <div class="table-responsive mb-2">
         <table class="table table-sm table-borderless">
           <tbody>
-            <tr>
-              <td class="pl-0 pb-0 w-25">Quantity</td>
-              <td class="pb-0" align='center'>Select size</td>
+            <tr style="margin-top: 0%;">
+              <td class="pl-0 pb-0 w-75">Select size</td>
+              <td class="pb-0" align='center'>Quantity</td>
             </tr>
             <tr>
-              <td class="pl-0">
-
-                <form action="{% url "add_to_cart" product.slug %}" method="POST">
-                  {% csrf_token %}
-
-                  <!-- <li style="color:#eee"> -->
-                  <input type="number" placeholder="1" name="qty" value="1">
-                  <!-- </li> -->
-                  <!-- <li style="color:#eee"> -->
-                  <br><br>
-                  <a type="button" class="btn btn-info btn-md mr-1 mb-2">
-                    <input class="btn btn-info btn-md mr-1 mb-2" type="submit" name="" value="Add to cart">
-                    <i class="fas fa-shopping-cart pr-2"></i>
-                  </a>
-                  <br><br>
-                  <!-- </li> -->
-
-                </form>
-
-              </td>
               <td>
                 <div class="mt-1">
                   <div class="form-check form-check-inline pl-0">
@@ -120,12 +100,39 @@
                   </div>
                 </div>
                 <br>
-                <a type="button" class="btn btn-success btn-md mr-1 mb-2">
-                  <input class="btn btn-success btn-md mr-1 mb-2" type="submit" name="" value="Buy Now">
-                </a>
-
 
               </td>
+              <td class="pl-0 pb-0 w-50">
+
+
+                <form action="{% url "add_to_cart" product.slug %}" method="POST">
+                  {% csrf_token %}
+
+                  <!-- <li style="color:#eee"> -->
+                  <input type="number" placeholder="1" name="qty" value="1">
+                  <!-- </li> -->
+                  <!-- <li style="color:#eee"> -->
+                  <br><br>
+                  <!-- <a type="button" class="btn btn-info btn-md mr-1 mb-2"> -->
+                  <tr>
+                    <td>
+                      <input class="btn btn-info btn-md mr-1 mb-2" type="submit" name="" value="Add to Cart">
+                      <i class="fas fa-shopping-cart pr-2"></i>
+                    </td>
+                    <td>
+                      <input class="btn btn-success btn-md mr-1 mb-2" type="submit" name="" value="Buy Now">
+                      <i class="fas fa-wallet"></i>
+                    </td>
+                  </tr>
+
+                  <!-- </a> -->
+                  <br><br>
+
+
+                </form>
+
+              </td>
+
 
             </tr>
           </tbody>
