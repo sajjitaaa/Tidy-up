@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uniforms</title>
-    <link rel="stylesheet" href="css/product.css" />
+    <title>Addressbook</title>
+    <link rel="stylesheet" href="css/user-profile.css" />
 
     <!-- css style sheet -->
 
@@ -67,7 +67,7 @@
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="#"
+                  href="products.html"
                   id="navbarDropdown"
                   role="button"
                   data-toggle="dropdown"
@@ -76,7 +76,7 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Categories
+                  Products
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
@@ -156,203 +156,137 @@
         </div>
       </nav>
     </section>
-    <!-- sidebar and products  -->
-    <section class="container-fluid main-content">
-      <div class="row">
-        <!-- sidebar -->
-        <div class="card-sidebar card col-md-3">
-          <!-- search -->
-          <div class="row searchbar">
-            <section class="mb-4">
-              <div
-                class="md-form md-outline mt-0 d-flex justify-content-between align-items-center"
-              >
-                <input
-                  type="text"
-                  id="search12"
-                  class="form-control mb-0"
-                  placeholder="Search by School"
-                />
-                <a href="#!" class="btn btn-flat btn-md px-3 waves-effect"
-                  ><i class="fas fa-search fa-lg"></i
-                ></a>
-              </div>
-            </section>
-          </div>
+    <!-- sidebar and main content -->
+    <div class="row">
+      <main class="col-sm-3 main">
+        <aside class="sidebar">
+          <nav class="nav">
+            <ul>
+              <li>
+                <a href="user-details.html">Personal details</a>
+              </li>
+              <li><a href="orders.html">Your Orders</a></li>
+              <li class="active">
+                <a href="all-address.html">Saved Addresses</a>
+              </li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </nav>
+        </aside>
+      </main>
+      <section class="col-sm-9">
+        <div class="card card-user">
+          <h1 class="title-user">Saved Addresses</h1>
           <hr />
-          <!-- filters -->
-          <div class="Filters">
-            <section class="mb-4">
-              <h6 class="mb-3">Items</h6>
+          <div class="row">
+            <div class="card card-address" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title">Name</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Phone number</h6>
 
-              <div class="form-check pl-0 mb-3">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="new"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="new"
-                  >Shirt</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="used"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="used"
-                  >Trousers</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="collectible"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="collectible"
-                  >Skirt</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3 pb-1">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="renewed"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="renewed"
-                  >Tie</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3 pb-1">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="renewed"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="renewed"
-                  >Belt</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3 pb-1">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="renewed"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="renewed"
-                  >Shoes</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3 pb-1">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="renewed"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="renewed"
-                  >Accessories</label
-                >
-              </div>
-              <hr />
-              <h6 class="mb-3">Seasonal</h6>
-
-              <div class="form-check pl-0 mb-3">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="new"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="new"
-                  >Summer</label
-                >
-              </div>
-              <div class="form-check pl-0 mb-3">
-                <input
-                  type="checkbox"
-                  class="form-check-input filled-in"
-                  id="used"
-                />
-                <label
-                  class="form-check-label small text-uppercase card-link-secondary"
-                  for="used"
-                  >Winter</label
-                >
-              </div>
-            </section>
-          </div>
-        </div>
-        <!-- products -->
-        <div class="col-md-8 products">
-          <section>
-            <!-- Grid row -->
-            <div class="row">
-              <!-- Grid column -->
-
-              <div class="col-md-4 mb-4">
-                <div class="card">
-                  <div class="view zoom overlay z-depth-2 rounded">
-                    <a href="#!">
-                      <div class="mask">
-                        <img
-                          class="product-img-grid img-fluid w-100"
-                          src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg"
-                        />
-                        <div class="mask rgba-black-slight"></div>
-                      </div>
-                    </a>
-                  </div>
-
-                  <div class="text-center pt-4">
-                    <h5>Shirt</h5>
-                    <p class="mb-2 text-muted text-uppercase small">
-                      {{ product.description }}
-                    </p>
-
-                    <hr />
-                    <h6 class="mb-3">Rs. {{ product.price }}</h6>
-                    <a
-                      type="button"
-                      class="btn btn-info btn-sm mr-1 mb-2"
-                      href="{% url 'add_to_cart' %}"
-                      ><i class="fas fa-shopping-cart pr-2"></i> Add to cart
-                    </a>
-                    <a
-                      href="product-details.html"
-                      type="button"
-                      class="btn btn-outline-dark btn-sm mr-1 mb-2"
-                    >
-                      <i class="fas fa-info-circle pr-2"></i>Details
-                    </a>
-                  </div>
+                <div class="table-responsive">
+                  <table class="table table-sm table-borderless mb-0">
+                    <tbody>
+                      <tr>
+                        <td>Address Line 1,2</td>
+                      </tr>
+                      <tr>
+                        <td>City, State</td>
+                      </tr>
+                      <tr>
+                        <td>Country</td>
+                      </tr>
+                      <tr>
+                        <td>Pincode</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
-          </section>
+            <div class="card card-address" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title">Name</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Phone number</h6>
+
+                <div class="table-responsive">
+                  <table class="table table-sm table-borderless mb-0">
+                    <tbody>
+                      <tr>
+                        <td>Address Line 1,2</td>
+                      </tr>
+                      <tr>
+                        <td>City, State</td>
+                      </tr>
+                      <tr>
+                        <td>Country</td>
+                      </tr>
+                      <tr>
+                        <td>Pincode</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="card card-address" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title">Name</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Phone number</h6>
+
+                <div class="table-responsive">
+                  <table class="table table-sm table-borderless mb-0">
+                    <tbody>
+                      <tr>
+                        <td>Address Line 1,2</td>
+                      </tr>
+                      <tr>
+                        <td>City, State</td>
+                      </tr>
+                      <tr>
+                        <td>Country</td>
+                      </tr>
+                      <tr>
+                        <td>Pincode</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="card card-address" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title">Name</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Phone number</h6>
+
+                <div class="table-responsive">
+                  <table class="table table-sm table-borderless mb-0">
+                    <tbody>
+                      <tr>
+                        <td>Address Line 1,2</td>
+                      </tr>
+                      <tr>
+                        <td>City, State</td>
+                      </tr>
+                      <tr>
+                        <td>Country</td>
+                      </tr>
+                      <tr>
+                        <td>Pincode</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <!-- footer -->
 
-    <footer class="block-area footer-section container-fluid">
+    <footer class="white-section block-area footer-section container-fluid">
       <div class="main-content">
         <div class="left box">
           <h2>About Us</h2>

@@ -1,0 +1,350 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #cccccc;
+  font-family: "Montserrat", sans-serif;
+  align-items: center;
+  text-align: center !important;
+}
+h1,
+h2,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif !important;
+  line-height: 1.2;
+  font-weight: 900;
+}
+h3 {
+  font-family: "Ubuntu", sans-serif !important;
+  font-size: 2rem;
+  font-weight: 1000 !important;
+}
+
+p {
+  font-family: "Montserrat-Black", sans-serif !important;
+  color: #494949;
+}
+
+/* sections */
+.colored-section {
+  /* background-color: #030e1f !important; */
+  background-color: #204051 !important;
+  color: #cae8d5;
+}
+
+.colored-section-2 {
+  background-color: #427e92;
+}
+
+.white-section {
+  background-color: #cae8d5;
+}
+
+.container-fluid {
+  padding: 3% 15%;
+}
+
+/* navbar */
+.navbar {
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0 0 4.5rem;
+}
+.navbar-brand {
+  font-family: "Ubuntu", sans-serif;
+  color: #cae8d5 !important;
+  font-weight: 900;
+  font-size: 1.5rem !important;
+  margin-left: 5% !important;
+}
+.navbar.bg-light {
+  background-color: #204051 !important;
+}
+/* .navbar-brand {
+  width: 3%;
+  height: auto;
+  margin-left: 5% !important;
+} */
+.navbar-logo {
+  height: 80% !important;
+  border-radius: 50%;
+  width: 350% !important;
+  height: auto !important;
+  margin-right: 3%;
+}
+
+.navbar-logo:hover {
+  cursor: default !important;
+}
+.nav-item {
+  padding: 0 18px;
+}
+.nav-link {
+  color: #e1f3e8 !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  margin: 0 5px !important;
+}
+.nav-link:hover {
+  color: #84a9ac !important;
+  font-size: 1.21rem !important;
+}
+.nav-item .dropdown-menu {
+  background-color: #427e92;
+  border-radius: 1%;
+  font-size: 0.9rem;
+}
+.dropdown-menu .dropdown-item {
+  color: #e1f3e8 !important;
+}
+.dropdown-menu .dropdown-item:hover {
+  color: #204051 !important;
+}
+.dropdown-menu hr {
+  background-color: #e1f3e8 !important;
+}
+.navbar-nav {
+  margin-left: 6% !important;
+  display: flexbox;
+  justify-content: space-evenly !important;
+}
+.nav-search {
+  margin-left: 2vw !important;
+  width: 35vw !important;
+}
+.btn-search {
+  margin-left: 2% !important;
+}
+.btn-accounts {
+  margin-left: 4% !important;
+}
+.btn-nav {
+  margin-left: 0.5vw !important;
+}
+/* sidebar and main content */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+/* side-nav */
+.sidebar {
+  font-family: Arial;
+  position: relative;
+  height: 120vh !important;
+  background: #427e92;
+  font-size: 1.4rem !important;
+}
+
+.nav {
+  position: relative;
+  margin: 0 8% !important;
+  text-align: right !important;
+  top: 45% !important;
+  transform: translateY(-50%) !important;
+  font-weight: 500 !important;
+}
+
+.nav ul {
+  list-style: none !important;
+}
+
+.nav ul li {
+  position: relative !important;
+  margin: 3em 0 !important;
+}
+.nav a {
+  /* line-height: 5em !important; */
+  text-transform: uppercase !important;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: rgba(#fff);
+  display: block;
+  transition: all ease-out 300ms;
+}
+
+.nav li.active a {
+  color: #ffda36;
+  text-decoration: none;
+}
+.nav li a {
+  color: rgb(212, 212, 212);
+  text-decoration: none;
+}
+.nav li a:hover {
+  color: #f8e178;
+  text-decoration: none;
+}
+
+.nav li:not(.active)::after {
+  opacity: 0.2;
+}
+
+.nav li:not(.active):hover a {
+  color: rgba(white) !important;
+}
+
+.nav li::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.2em;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to right, #204051, #e1f3e8);
+}
+/* user content */
+.title-user {
+  text-align: center;
+  margin-bottom: 5%;
+}
+.card-user {
+  align-items: center;
+  text-align: left;
+  margin: 5%;
+  padding: 5%;
+}
+.field {
+  font-family: "Montserrat", sans-serif !important;
+  line-height: 2 !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.2rem !important;
+}
+/* address cards */
+.card-user .card-address {
+  border-radius: 2px;
+  margin: 1%;
+  text-align: left !important;
+  align-items: left !important;
+}
+.card-user .card-address:hover {
+  -webkit-box-shadow: 0 0 8px #9e9a9a;
+  box-shadow: 0 0 8px #9e9a9a;
+}
+/* Footer section */
+
+.footer-section {
+  width: 96%;
+  overflow: hidden;
+  position: relative;
+  margin-right: 2vw !important;
+  margin-left: 2vw;
+  margin-bottom: 4vh !important;
+}
+.icon-footer {
+  color: #fff6a9;
+}
+.icon-footer :hover {
+  color: chocolate !important;
+}
+.main-content {
+  display: flex;
+}
+
+.main-content .box {
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+
+.box h2 {
+  font-family: "Ubuntu", sans-serif !important;
+  font-size: 1.525rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.box .content {
+  margin: 20px 20px 0 0;
+}
+
+.left .content p {
+  text-align: justify;
+}
+.left .content .social {
+  margin: 20px 0 0 0;
+}
+
+.left .content .social a {
+  padding: 0 2px;
+}
+
+.left .content .social a span {
+  height: 40px;
+  width: 40px;
+  background: #1a1a1a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.left .content .social a span:hover {
+  background: #427e92;
+}
+
+.center {
+  margin-left: 50px;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .list {
+    margin: 10px;
+  }
+
+  .logo {
+    height: 10vw;
+    width: 10vw;
+    border-radius: 50%;
+  }
+
+  .list-links {
+    font-size: 4vw;
+    font-weight: 300;
+
+    padding: 20px 20px;
+    text-decoration: none;
+  }
+
+  .main-content .box {
+    flex-basis: 50%;
+    padding: 4px 8px;
+  }
+
+  .box h2 {
+    font-size: 0.8rem;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+
+  .box .content {
+    margin: 3px 3px 0 0;
+  }
+
+  .left .content p {
+    text-align: justify;
+    font-size: 8px;
+  }
+  .left .content .social {
+    margin: 4px 0 0 0;
+  }
+
+  .left .content .social a {
+    padding: 0 2px;
+  }
+
+  .left .content .social a span {
+    height: 30px;
+    width: 30px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 3px;
+    transition: 0.3s;
+  }
+
+  .left .content .social a span:hover {
+    background: #427e92;
+  }
+}
