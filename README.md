@@ -1,1 +1,1 @@
-# Minor-project
+An E-commerce web application to provide a platform for users to buy school uniforms. Functionalities like searching, sorting, filtering are included. Dynamic functionalities like 'add to cart ' and payment methods integrated. Front-end using  HTML5, CSS, Bootstrap CSS and Javascript. Back-end in Python framework Django. Database using SQLite.
